@@ -1,0 +1,20 @@
+/* 
+  PaySDK.strings
+  FoxOne
+
+  Created by moubuns on 2018/9/1.
+  Copyright © 2018 FoxOne. All rights reserved.
+*/
+
+
+"INVALID_OPERATION_MSG" = "System Exception.";
+"SERVER_FALUT_MSG" = "System Exception.";
+"invalid_public_key" = "Invalid address.Please check it and retry.";
+"user_not_found" = "User not found";
+"user_not_logged" = "User not login";
+"pin_not_set_message" = "You have not set PIN yet, please set first.";
+"incorrect_pin_message" = "It is incorrect,please try again.";
+"invalid_amount" = "Invalid amount";
+"amount_too_small" = "Amount too small";
+"phone_not_binded" = "Phone not binded";
+"address_unavaliable" = "You can not transfer to yourself";

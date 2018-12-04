@@ -1,0 +1,19 @@
+/* 
+  PaySDK.strings
+  FoxOne
+
+  Created by moubuns on 2018/9/1.
+  Copyright © 2018 FoxOne. All rights reserved.
+*/
+
+
+"INVALID_OPERATION_MSG" = "系统异常";
+"SERVER_FALUT_MSG" = "系统异常";
+"invalid_public_key" = "地址无效，请确认后重新输入";
+"user_not_found" = "未找到该用户";
+"user_not_logged" = "用户未登陆";
+"pin_not_set_message" = "您尚未设置PIN,请先设置";
+"incorrect_pin_message" = "您输入的PIN有误，请再试一遍";
+"invalid_amount" = "无效金额";
+"amount_too_small" = "金额太小";
+"address_unavaliable" = "你不能给自己转账";
