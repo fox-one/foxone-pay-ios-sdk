@@ -1,6 +1,0 @@
-module FoxOnePaySDK {
-  umbrella header "FoxOnePaySDK-umbrella.h"
-
-  export *
-  module * { export * }
-}
