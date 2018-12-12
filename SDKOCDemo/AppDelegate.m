@@ -7,16 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "SDKOCDemo-Swift.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) FoxOpenSDKHelper *sdkHelper;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.sdkHelper = [[FoxOpenSDKHelper alloc] init];
+    [self.sdkHelper registerSDK];
     return YES;
 }
 
