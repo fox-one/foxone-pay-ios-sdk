@@ -22,7 +22,7 @@ public struct Asset: Codable {
     public let confirmations: Double
     // 图标
     public let icon: String
-    // 名称
+    // 名称bre
     public let name: String
     // 当前价格 btc计价
     public let priceBTC: Double

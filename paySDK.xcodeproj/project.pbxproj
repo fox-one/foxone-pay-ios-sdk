@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D526E09D20C09C5FCC005B8 /* Pods_SDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66D135DC8668A591B244C59 /* Pods_SDKDemo.framework */; };
 		5A25185A99208AF45F399787 /* Pods_FoxOnePaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A5D985B39A704795DED44E /* Pods_FoxOnePaySDK.framework */; };
 		7E6213182181C2CF0034EAF4 /* PaySDKEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6213172181C2CF0034EAF4 /* PaySDKEnviroment.swift */; };
 		7E62131A2181C3110034EAF4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6213192181C3110034EAF4 /* Currency.swift */; };
 		7E62131C2181C31C0034EAF4 /* CurrencyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62131B2181C31C0034EAF4 /* CurrencyInfo.swift */; };
+		9130CB3D00FAD4024A6B83E3 /* Pods_SDKOCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0E76BBEB816132A37F5B7D /* Pods_SDKOCDemo.framework */; };
 		C2146744216E037200CECBE1 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146738216E037200CECBE1 /* Option.swift */; };
 		C2146745216E037200CECBE1 /* WalletCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146739216E037200CECBE1 /* WalletCoin.swift */; };
 		C2146746216E037200CECBE1 /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C214673A216E037200CECBE1 /* Opponent.swift */; };
@@ -21,6 +23,14 @@
 		C214674B216E037200CECBE1 /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C214673F216E037200CECBE1 /* Lists.swift */; };
 		C214674C216E037200CECBE1 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146740216E037200CECBE1 /* Snapshot.swift */; };
 		C214674D216E037200CECBE1 /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146741216E037200CECBE1 /* PageInfo.swift */; };
+		C2298B8821C0B6CE00A43AE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2298B8721C0B6CE00A43AE5 /* AppDelegate.m */; };
+		C2298B8B21C0B6CE00A43AE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2298B8A21C0B6CE00A43AE5 /* ViewController.m */; };
+		C2298B8E21C0B6CE00A43AE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2298B8C21C0B6CE00A43AE5 /* Main.storyboard */; };
+		C2298B9021C0B6CE00A43AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2298B8F21C0B6CE00A43AE5 /* Assets.xcassets */; };
+		C2298B9321C0B6CE00A43AE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2298B9121C0B6CE00A43AE5 /* LaunchScreen.storyboard */; };
+		C2298B9621C0B6CE00A43AE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2298B9521C0B6CE00A43AE5 /* main.m */; };
+		C2298B9E21C0B8B200A43AE5 /* FoxPaySDKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2298B9D21C0B8B200A43AE5 /* FoxPaySDKHelper.swift */; };
+		C2298BA121C0BA5500A43AE5 /* FoxAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = C2298B9F21C0BA5500A43AE5 /* FoxAsset.m */; };
 		C234F47D21B6AE7900A188BD /* PaySDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234F47C21B6AE7900A188BD /* PaySDKError.swift */; };
 		C234F47F21B6AEA000A188BD /* PaySDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234F47E21B6AEA000A188BD /* PaySDKService.swift */; };
 		C23E76E3219D10C9007931FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23E76E2219D10C9007931FF /* User.swift */; };
@@ -41,10 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C0E76BBEB816132A37F5B7D /* Pods_SDKOCDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDKOCDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6213172181C2CF0034EAF4 /* PaySDKEnviroment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaySDKEnviroment.swift; sourceTree = "<group>"; };
 		7E6213192181C3110034EAF4 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7E62131B2181C31C0034EAF4 /* CurrencyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyInfo.swift; sourceTree = "<group>"; };
+		94E2374DB02F18C32FD27BB8 /* Pods-SDKOCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKOCDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKOCDemo/Pods-SDKOCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A6ABC6117D7179E647AF870A /* Pods-SDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKDemo/Pods-SDKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B1FFC9360AFDD2B78948A7B1 /* Pods-SDKOCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKOCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKOCDemo/Pods-SDKOCDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B4CC2AC226FBBB7FB87B745E /* Pods-SDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKDemo/Pods-SDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C0A5D985B39A704795DED44E /* Pods_FoxOnePaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoxOnePaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2146738216E037200CECBE1 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
@@ -57,6 +70,20 @@
 		C214673F216E037200CECBE1 /* Lists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
 		C2146740216E037200CECBE1 /* Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		C2146741216E037200CECBE1 /* PageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
+		C2298B8421C0B6CE00A43AE5 /* SDKOCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDKOCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2298B8621C0B6CE00A43AE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C2298B8721C0B6CE00A43AE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C2298B8921C0B6CE00A43AE5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C2298B8A21C0B6CE00A43AE5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C2298B8D21C0B6CE00A43AE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2298B8F21C0B6CE00A43AE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2298B9221C0B6CE00A43AE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C2298B9421C0B6CE00A43AE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2298B9521C0B6CE00A43AE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C2298B9A21C0B81000A43AE5 /* SDKOCDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKOCDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		C2298B9D21C0B8B200A43AE5 /* FoxPaySDKHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoxPaySDKHelper.swift; path = "../../../FoxOne/foxone-osp-opensdk-oc/OCDemo/OCDemo/FoxPaySDKHelper.swift"; sourceTree = "<group>"; };
+		C2298B9F21C0BA5500A43AE5 /* FoxAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoxAsset.m; path = "../../../FoxOne/foxone-osp-opensdk-oc/OCDemo/OCDemo/FoxAsset.m"; sourceTree = "<group>"; };
+		C2298BA021C0BA5500A43AE5 /* FoxAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoxAsset.h; path = "../../../FoxOne/foxone-osp-opensdk-oc/OCDemo/OCDemo/FoxAsset.h"; sourceTree = "<group>"; };
 		C234F47C21B6AE7900A188BD /* PaySDKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaySDKError.swift; sourceTree = "<group>"; };
 		C234F47E21B6AEA000A188BD /* PaySDKService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaySDKService.swift; sourceTree = "<group>"; };
 		C23E76E2219D10C9007931FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -80,10 +107,19 @@
 		C2F36849213FC886001CFD49 /* RequestAuthAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAuthAdapter.swift; sourceTree = "<group>"; };
 		C2F3684A213FC886001CFD49 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD51EF3909AB93D136D0BA4D /* Pods-FoxOnePaySDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoxOnePaySDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoxOnePaySDK/Pods-FoxOnePaySDK.release.xcconfig"; sourceTree = "<group>"; };
+		E66D135DC8668A591B244C59 /* Pods_SDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF742A95F8E701B3630A2611 /* Pods-FoxOnePaySDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoxOnePaySDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoxOnePaySDK/Pods-FoxOnePaySDK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C2298B8121C0B6CE00A43AE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9130CB3D00FAD4024A6B83E3 /* Pods_SDKOCDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2B35AA42138227B0072B077 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D526E09D20C09C5FCC005B8 /* Pods_SDKDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +146,8 @@
 				DD51EF3909AB93D136D0BA4D /* Pods-FoxOnePaySDK.release.xcconfig */,
 				B4CC2AC226FBBB7FB87B745E /* Pods-SDKDemo.debug.xcconfig */,
 				A6ABC6117D7179E647AF870A /* Pods-SDKDemo.release.xcconfig */,
+				94E2374DB02F18C32FD27BB8 /* Pods-SDKOCDemo.debug.xcconfig */,
+				B1FFC9360AFDD2B78948A7B1 /* Pods-SDKOCDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -117,8 +156,30 @@
 			isa = PBXGroup;
 			children = (
 				C0A5D985B39A704795DED44E /* Pods_FoxOnePaySDK.framework */,
+				E66D135DC8668A591B244C59 /* Pods_SDKDemo.framework */,
+				1C0E76BBEB816132A37F5B7D /* Pods_SDKOCDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2298B8521C0B6CE00A43AE5 /* SDKOCDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C2298BA021C0BA5500A43AE5 /* FoxAsset.h */,
+				C2298B9F21C0BA5500A43AE5 /* FoxAsset.m */,
+				C2298B9D21C0B8B200A43AE5 /* FoxPaySDKHelper.swift */,
+				C2298B8621C0B6CE00A43AE5 /* AppDelegate.h */,
+				C2298B8721C0B6CE00A43AE5 /* AppDelegate.m */,
+				C2298B8921C0B6CE00A43AE5 /* ViewController.h */,
+				C2298B8A21C0B6CE00A43AE5 /* ViewController.m */,
+				C2298B8C21C0B6CE00A43AE5 /* Main.storyboard */,
+				C2298B8F21C0B6CE00A43AE5 /* Assets.xcassets */,
+				C2298B9121C0B6CE00A43AE5 /* LaunchScreen.storyboard */,
+				C2298B9421C0B6CE00A43AE5 /* Info.plist */,
+				C2298B9521C0B6CE00A43AE5 /* main.m */,
+				C2298B9A21C0B81000A43AE5 /* SDKOCDemo-Bridging-Header.h */,
+			);
+			path = SDKOCDemo;
 			sourceTree = "<group>";
 		};
 		C234F47A21B6A7C500A188BD /* Lists */ = {
@@ -143,6 +204,7 @@
 			children = (
 				C2B35AAA2138227B0072B077 /* paySDK */,
 				C2CDBA54213CD1D9006A5355 /* SDKDemo */,
+				C2298B8521C0B6CE00A43AE5 /* SDKOCDemo */,
 				C2B35AA92138227B0072B077 /* Products */,
 				478D7D2E828DF6212998DD6D /* Pods */,
 				54EEE047097A46E122FE7996 /* Frameworks */,
@@ -154,6 +216,7 @@
 			children = (
 				C2B35AA82138227B0072B077 /* FoxOnePaySDK.framework */,
 				C2CDBA53213CD1D9006A5355 /* SDKDemo.app */,
+				C2298B8421C0B6CE00A43AE5 /* SDKOCDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,6 +328,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C2298B8321C0B6CE00A43AE5 /* SDKOCDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2298B9921C0B6CE00A43AE5 /* Build configuration list for PBXNativeTarget "SDKOCDemo" */;
+			buildPhases = (
+				0AFE4B502C60EF349FB39312 /* [CP] Check Pods Manifest.lock */,
+				C2298B8021C0B6CE00A43AE5 /* Sources */,
+				C2298B8121C0B6CE00A43AE5 /* Frameworks */,
+				C2298B8221C0B6CE00A43AE5 /* Resources */,
+				FA0F4613E61806105165E289 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDKOCDemo;
+			productName = SDKOCDemo;
+			productReference = C2298B8421C0B6CE00A43AE5 /* SDKOCDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C2B35AA72138227B0072B077 /* FoxOnePaySDK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2B35ABC2138227B0072B077 /* Build configuration list for PBXNativeTarget "FoxOnePaySDK" */;
@@ -292,7 +374,7 @@
 				C2CDBA4F213CD1D9006A5355 /* Sources */,
 				C2CDBA50213CD1D9006A5355 /* Frameworks */,
 				C2CDBA51213CD1D9006A5355 /* Resources */,
-				B34C3550F202D837028B34FD /* [CP] Copy Pods Resources */,
+				38A91D5E7E5A4AE2E3B95B0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,6 +395,10 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = FoxOne;
 				TargetAttributes = {
+					C2298B8321C0B6CE00A43AE5 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
 					C2B35AA72138227B0072B077 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
@@ -338,11 +424,22 @@
 			targets = (
 				C2B35AA72138227B0072B077 /* FoxOnePaySDK */,
 				C2CDBA52213CD1D9006A5355 /* SDKDemo */,
+				C2298B8321C0B6CE00A43AE5 /* SDKOCDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C2298B8221C0B6CE00A43AE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2298B9321C0B6CE00A43AE5 /* LaunchScreen.storyboard in Resources */,
+				C2298B9021C0B6CE00A43AE5 /* Assets.xcassets in Resources */,
+				C2298B8E21C0B6CE00A43AE5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2B35AA62138227B0072B077 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,7 +461,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B34C3550F202D837028B34FD /* [CP] Copy Pods Resources */ = {
+		0AFE4B502C60EF349FB39312 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -372,23 +469,48 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SDKDemo/Pods-SDKDemo-resources.sh",
-				"${PODS_ROOT}/../paySDK/Resource/en.lproj/PaySDK.strings",
-				"${PODS_ROOT}/../paySDK/Resource/zh-Hans.lproj/PaySDK.strings",
-				"${PODS_ROOT}/../paySDK/Resource/en.lproj",
-				"${PODS_ROOT}/../paySDK/Resource/zh-Hans.lproj",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PaySDK.strings",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"$(DERIVED_FILE_DIR)/Pods-SDKOCDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDKDemo/Pods-SDKDemo-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38A91D5E7E5A4AE2E3B95B0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SDKDemo/Pods-SDKDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
+				"${BUILT_PRODUCTS_DIR}/FoxOnePaySDK/FoxOnePaySDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoxOnePaySDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDKDemo/Pods-SDKDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9309AC4C92E4AA5F64AA0C0 /* [CP] Check Pods Manifest.lock */ = {
@@ -407,6 +529,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA0F4613E61806105165E289 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SDKOCDemo/Pods-SDKOCDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
+				"${BUILT_PRODUCTS_DIR}/FoxOnePaySDK/FoxOnePaySDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoxOnePaySDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDKOCDemo/Pods-SDKOCDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEE6EE5DC799852FB9FF0523 /* [CP] Check Pods Manifest.lock */ = {
@@ -434,6 +586,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C2298B8021C0B6CE00A43AE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2298B8B21C0B6CE00A43AE5 /* ViewController.m in Sources */,
+				C2298BA121C0BA5500A43AE5 /* FoxAsset.m in Sources */,
+				C2298B9621C0B6CE00A43AE5 /* main.m in Sources */,
+				C2298B9E21C0B8B200A43AE5 /* FoxPaySDKHelper.swift in Sources */,
+				C2298B8821C0B6CE00A43AE5 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2B35AA32138227B0072B077 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -476,6 +640,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C2298B8C21C0B6CE00A43AE5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2298B8D21C0B6CE00A43AE5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C2298B9121C0B6CE00A43AE5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2298B9221C0B6CE00A43AE5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		C2CDBA59213CD1D9006A5355 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -504,6 +684,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C2298B9721C0B6CE00A43AE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94E2374DB02F18C32FD27BB8 /* Pods-SDKOCDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RD4GU69WG6;
+				INFOPLIST_FILE = SDKOCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = one.fox.SDKOCDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SDKOCDemo/SDKOCDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2298B9821C0B6CE00A43AE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1FFC9360AFDD2B78948A7B1 /* Pods-SDKOCDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RD4GU69WG6;
+				INFOPLIST_FILE = SDKOCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = one.fox.SDKOCDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SDKOCDemo/SDKOCDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C2B35ABA2138227B0072B077 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -728,6 +956,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C2298B9921C0B6CE00A43AE5 /* Build configuration list for PBXNativeTarget "SDKOCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2298B9721C0B6CE00A43AE5 /* Debug */,
+				C2298B9821C0B6CE00A43AE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C2B35AA22138227B0072B077 /* Build configuration list for PBXProject "paySDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

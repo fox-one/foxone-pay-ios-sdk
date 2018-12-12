@@ -1,8 +1,8 @@
 
 platform :ios, '9.0'
-
+use_frameworks!
 target 'FoxOnePaySDK' do
-    use_frameworks!
+
 
     pod 'CryptoSwift'
     pod 'SwiftyRSA'
@@ -17,4 +17,12 @@ end
      pod 'SwiftyJSON'
      pod 'FoxOnePaySDK', :path => './'
  end
+
+target 'SDKOCDemo' do
+    pod 'CryptoSwift'
+    pod 'SwiftyRSA'
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'FoxOnePaySDK', :path => './'
+end
 
