@@ -9,7 +9,7 @@ Pay SDK 是加密货币支付解决方案的基础 SDK。基于Pay SDK 可以方
 * 汇率
 * PIN码
 
-## 安装    
+## 集成到你的应用  
 
 确保你安装了最新的 [CocoaPods](https://cocoapods.org) :
 
@@ -21,50 +21,49 @@ pod 'FoxOnePaySDK'
 
 在终端执行 `pod install` 
 
+## 在 App 中使用 SDK
 
-## 在App是使用SDK
+1. 在[商户平台](https://admin.pay.fox.one/)中注册账户，通过验证之后，并且填写商户信息提交审核。
 
-1. 在商户平台中注册用户，并且填写商户信息。在审核之后获取 AppSerect
+2. 申请审核通过之后会发送 `AppSecret` 给您， `AppSecret` 是访问支付后台的令牌。
     
 2. 在您的应用中注册 SDK
      
-    ```swift
-    //import SDK
-    import FoxOnePaySDK
+```swift
     
-    //Register
-    PaySDK.registerSDK(key: "AppSerect", delegate: self)
-    ```
-3. 实现 Pay SDK Delegate
+import FoxOnePaySDK
+    
+//Register
+PaySDK.registerSDK(key: "AppSerect", delegate: self)
+```
+1. 实现 Pay SDK Delegate
 
-    ```swift
-  extension AppDelegate: PaySDKProtcol {
-        //session token 
-        func f1AccessToken() -> String {
-            return ""
-        }
-        
-        func f1PublicKey() -> String {
-            return ""
-        }
-        
-        func f1PIN() -> String {
-            return  ""
-        }
+```swift
+extension AppDelegate: PaySDKProtcol {
+    //session token 
+    func f1AccessToken() -> String {
+        return "" // 通过支付后端申请的Token
     }
-    ```
-4. 调用钱包的服务
-  
-    ```swift  
-    PaySDKService.getAssets { completion in
-                switch completion {
-                case .success(let assets):
-                    self.handle(assets: assets)
-                case .failure:
-                    break
-                }
-            }
-    ```
-##  API 
     
-  - [API](https://github.com/fox-one/foxone-pay-ios-sdk/blob/master/API.md) - The PaySDKService API
+    func f1PIN() -> String {
+        return  "" // 用户的PIN码
+    }
+}
+```
+
+1. 调用钱包的服务
+  
+```swift  
+// 获取用户钱包
+PaySDKService.getAssets { completion in
+            switch completion {
+            case .success(let assets):
+                self.handle(assets: assets)
+            case .failure:
+                break
+            }
+        }
+```
+##  具体 API 参考 和错误码
+    
+- [API](https://github.com/fox-one/foxone-pay-ios-sdk/blob/master/API.md) - The PaySDKService API
