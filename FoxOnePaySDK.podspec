@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FoxOnePaySDK"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "FoxOne Pay SDK"
 
   s.description  = "FoxOne Pay SDK for iOS"
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.source_files  = "paySDK/**/*.swift"
   s.resources = "paySDK/Resource/**/*.*"
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
   s.requires_arc = true
   s.dependency "Alamofire" 
   s.dependency "SwiftyJSON"
