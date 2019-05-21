@@ -13,13 +13,21 @@ internal protocol PaySDKMappable {
     init?(jsonData: JSON)
 }
 
-extension WalletCoin: PaySDKMappable {
+extension WalletAsset: PaySDKMappable {
     init?(jsonData: JSON) {
-        id = jsonData["coinId"].intValue
+        assetId = jsonData["assetId"].stringValue
         name = jsonData["name"].stringValue
         symbol = jsonData["symbol"].stringValue
-        logo = jsonData["logo"].stringValue
-        mixinAssetId = jsonData["mixinAssetId"].stringValue
+        icon = jsonData["icon"].stringValue
+        chainId = jsonData["chainId"].stringValue
+        
+        price = jsonData["price"].doubleValue
+        changeBTCPercentage = jsonData["changeBtc"].doubleValue
+        changeUSDPercentage = jsonData["changeUsd"].doubleValue
+        priceBTC = jsonData["priceBtc"].doubleValue
+        priceUSD = jsonData["priceUsd"].doubleValue
+        changeRMBPercentage = jsonData["changeUsd"].doubleValue
+        
     }
 }
 
@@ -28,13 +36,11 @@ extension Snapshot: PaySDKMappable {
     public init?(jsonData: JSON) {
         amount = jsonData["amount"].doubleValue
         assetId = jsonData["assetId"].stringValue
-        insideMixin = jsonData["insideMixin"].boolValue
         createdAt = jsonData["createdAt"].doubleValue
         memo = jsonData["memo"].stringValue
         snapshotId = jsonData["snapshotId"].stringValue
         traceId = jsonData["traceId"].stringValue
         transactionHash = jsonData["transactionHash"].stringValue
-
         opponentId = jsonData["opponentId"].stringValue
         receiver = jsonData["receiver"].stringValue
         sender = jsonData["sender"].stringValue
@@ -56,23 +62,22 @@ extension Fee: PaySDKMappable {
 
 extension Asset: PaySDKMappable {
     init?(jsonData: JSON) {
-        id = jsonData["assetId"].stringValue
+        assetId = jsonData["assetId"].stringValue
         balance = jsonData["balance"].doubleValue
         chainId = jsonData["chainId"].stringValue
-        changeBtcPercentage = jsonData["changeBtc"].doubleValue
-        changeUsdPercentage = jsonData["changeUsd"].doubleValue
-        coinId = jsonData["coinId"].intValue
-        confirmations = jsonData["confirmations"].doubleValue
+        changeBTCPercentage = jsonData["changeBtc"].doubleValue
+        changeUSDPercentage = jsonData["changeUsd"].doubleValue
+        changeRMBPercentage = jsonData["changeUsd"].doubleValue
         icon = jsonData["icon"].stringValue
         name = jsonData["name"].stringValue
+        price = jsonData["price"].doubleValue
         priceBTC = jsonData["priceBtc"].doubleValue
         priceUSD = jsonData["priceUsd"].doubleValue
         publicKey = jsonData["publicKey"].stringValue
         symbol = jsonData["symbol"].stringValue
         accountName = jsonData["accountName"].stringValue
         accountTag = jsonData["accountTag"].stringValue
-        chain = WalletCoin(jsonData: jsonData["chain"])
-        coin = WalletCoin(jsonData: jsonData["coin"])
+        chain = WalletAsset(jsonData: jsonData["chain"])
         option = Option(jsonData: jsonData["option"]) ?? Option(hide: false)
     }
 }

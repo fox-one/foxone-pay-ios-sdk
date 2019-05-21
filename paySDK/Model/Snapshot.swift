@@ -49,9 +49,6 @@ public struct Snapshot: Codable {
     /// 金额
     public let amount: Double
     
-    /// 是否Mixin网络
-    public let insideMixin: Bool
-    
     /// 创建时间
     public let createdAt: TimeInterval
     

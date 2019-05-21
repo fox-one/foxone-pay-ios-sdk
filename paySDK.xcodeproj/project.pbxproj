@@ -14,7 +14,7 @@
 		7E62131C2181C31C0034EAF4 /* CurrencyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62131B2181C31C0034EAF4 /* CurrencyInfo.swift */; };
 		9130CB3D00FAD4024A6B83E3 /* Pods_SDKOCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0E76BBEB816132A37F5B7D /* Pods_SDKOCDemo.framework */; };
 		C2146744216E037200CECBE1 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146738216E037200CECBE1 /* Option.swift */; };
-		C2146745216E037200CECBE1 /* WalletCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146739216E037200CECBE1 /* WalletCoin.swift */; };
+		C2146745216E037200CECBE1 /* WalletAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146739216E037200CECBE1 /* WalletAsset.swift */; };
 		C2146746216E037200CECBE1 /* Opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C214673A216E037200CECBE1 /* Opponent.swift */; };
 		C2146747216E037200CECBE1 /* Fee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C214673B216E037200CECBE1 /* Fee.swift */; };
 		C2146748216E037200CECBE1 /* CNYTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C214673C216E037200CECBE1 /* CNYTicker.swift */; };
@@ -61,7 +61,7 @@
 		B4CC2AC226FBBB7FB87B745E /* Pods-SDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKDemo/Pods-SDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C0A5D985B39A704795DED44E /* Pods_FoxOnePaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoxOnePaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2146738216E037200CECBE1 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		C2146739216E037200CECBE1 /* WalletCoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletCoin.swift; sourceTree = "<group>"; };
+		C2146739216E037200CECBE1 /* WalletAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletAsset.swift; sourceTree = "<group>"; };
 		C214673A216E037200CECBE1 /* Opponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opponent.swift; sourceTree = "<group>"; };
 		C214673B216E037200CECBE1 /* Fee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fee.swift; sourceTree = "<group>"; };
 		C214673C216E037200CECBE1 /* CNYTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNYTicker.swift; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 				C214673A216E037200CECBE1 /* Opponent.swift */,
 				C2146738216E037200CECBE1 /* Option.swift */,
 				C2146740216E037200CECBE1 /* Snapshot.swift */,
-				C2146739216E037200CECBE1 /* WalletCoin.swift */,
+				C2146739216E037200CECBE1 /* WalletAsset.swift */,
 				C23E76E2219D10C9007931FF /* User.swift */,
 			);
 			path = Model;
@@ -610,7 +610,7 @@
 				C2F36856213FC886001CFD49 /* SecureData.swift in Sources */,
 				C2146744216E037200CECBE1 /* Option.swift in Sources */,
 				C234F47D21B6AE7900A188BD /* PaySDKError.swift in Sources */,
-				C2146745216E037200CECBE1 /* WalletCoin.swift in Sources */,
+				C2146745216E037200CECBE1 /* WalletAsset.swift in Sources */,
 				C2146748216E037200CECBE1 /* CNYTicker.swift in Sources */,
 				C234F47F21B6AEA000A188BD /* PaySDKService.swift in Sources */,
 				C2F36857213FC886001CFD49 /* PinHelper.swift in Sources */,
