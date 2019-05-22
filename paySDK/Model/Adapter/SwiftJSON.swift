@@ -56,7 +56,15 @@ extension Fee: PaySDKMappable {
     init?(jsonData: JSON) {
         amount = jsonData["amount"].doubleValue
         assetId = jsonData["assetId"].stringValue
-        coinId = jsonData["coinId"].intValue
+        assetSymbol = jsonData["assetSymbol"].stringValue
+    }
+}
+
+extension WithDrawFee: PaySDKMappable {
+    init?(jsonData: JSON) {
+        feeAsset = Asset(jsonData: jsonData["feeAsset"])
+        feeAmount = jsonData["feeAmount"].doubleValue
+        fee = Fee(jsonData: jsonData["fee"])
     }
 }
 

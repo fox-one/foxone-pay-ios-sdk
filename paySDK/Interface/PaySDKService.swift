@@ -122,7 +122,6 @@ public final class PaySDKService {
 
                     return Result.success(mappedObject)
                 })
-
     }
 
     /// 获取钱包支持资产的列表
@@ -161,7 +160,7 @@ public final class PaySDKService {
                                label: String,
                                completion: @escaping (Result<Snapshot>) -> Void) -> DataRequest {
         return NetworkManager.shared
-                .request(api: PaySDKAPI.withdraw(id: assetId, address: address, amount: amount, memo: memo, label: label))
+                .request(api: PaySDKAPI.withdraw(assetId: assetId, address: address, amount: amount, memo: memo, label: label))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
                     guard let mappedObject = Snapshot(jsonData: json["snapshot"]) else {
                         return Result.failure(ErrorCode.dataError)
@@ -189,7 +188,7 @@ public final class PaySDKService {
                                memo: String,
                                completion: @escaping (Result<Snapshot>) -> Void) -> DataRequest {
         return NetworkManager.shared
-            .request(api: PaySDKAPI.transfer(userId: userId, assetId: assetId, memo: memo, amount: amount))
+            .request(api: PaySDKAPI.transfer(opponentId: userId, assetId: assetId, memo: memo, amount: amount))
             .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
                 guard let mappedObject = Snapshot(jsonData: json["snapshot"]) else {
                     return Result.failure(ErrorCode.dataError)
@@ -209,11 +208,11 @@ public final class PaySDKService {
     ///   - completion: 结果回调，返回手续费或者错误
     /// - Returns: 返回请求体
     @discardableResult
-    public class func getFee(by id: String, address: String, label: String, completion: @escaping (Result<Fee>) -> Void) -> DataRequest {
+    public class func getFee(by id: String, address: String, label: String, completion: @escaping (Result<WithDrawFee>) -> Void) -> DataRequest {
         return NetworkManager.shared
-                .request(api: PaySDKAPI.fee(id: id, address: address, label: label))
-                .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Fee>) in
-                    guard let mappedObject = Fee(jsonData: json["fee"]) else {
+                .request(api: PaySDKAPI.fee(assetId: id, address: address, label: label))
+                .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<WithDrawFee>) in
+                    guard let mappedObject = WithDrawFee(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
                     }
 

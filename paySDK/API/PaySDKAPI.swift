@@ -16,8 +16,8 @@ enum PaySDKAPI {
     case snapshots(cursor: String, limit: Int)
     case snapshot(id: String, cursor: String, limit: Int)
     case getSnapshot(id: String)
-    case withdraw(id: String, address: String, amount: String, memo: String, label: String)
-    case fee(id: String, address: String, label: String)
+    case withdraw(assetId: String, address: String, amount: String, memo: String, label: String)
+    case fee(assetId: String, address: String, label: String)
     case supportAssets
     case setPin(newPinToken: String, type: Int)
     case changePin(oldPinToken: String, newPinToken: String, type: Int)
@@ -25,7 +25,7 @@ enum PaySDKAPI {
     case hideAsset(id: String)
     case showAsset(id: String)
     case currency
-    case transfer(userId: String, assetId: String, memo: String, amount: String)
+    case transfer(opponentId: String, assetId: String, memo: String, amount: String)
     case user
 
     var path: String {
@@ -35,11 +35,11 @@ enum PaySDKAPI {
         case .assets:
             return "/wallet/assets"
         case .asset(let assetId):
-            return "/wallet/assets/\(assetId)"
+            return "/wallet/asset/\(assetId)"
         case .snapshots:
             return "/wallet/snapshots"
         case .getSnapshot(let snapshotId):
-            return "/wallet/snapshots/\(snapshotId)"
+            return "/wallet/snapshot/\(snapshotId)"
         case .snapshot:
             return "/wallet/snapshots"
         case .withdraw:
@@ -86,8 +86,8 @@ enum PaySDKAPI {
             return ["cursor": cursor, "limit": limit]
         case .snapshot(let id, let cursor, let limit):
             return ["assetId": id, "cursor": cursor, "limit": limit]
-        case .withdraw(let id, let address, let amount, let memo, let label):
-            var param: [String: Any] = ["publicKey": address, "amount": amount, "assetId": id, "memo": memo]
+        case .withdraw(let assetId, let address, let amount, let memo, let label):
+            var param: [String: Any] = ["publicKey": address, "amount": amount, "assetId": assetId, "memo": memo]
             if !label.isEmpty {
                 param["label"] = label
             }
@@ -106,8 +106,8 @@ enum PaySDKAPI {
             return ["pinType": type, "newPinToken": newPinToken]
         case .showAsset(let id), .hideAsset(let id):
             return ["id": id]
-        case .transfer(let userId, let assetId, let memo, let amount):
-            return ["userId": userId, "assetId": assetId, "memo": memo, "amount": amount]
+        case .transfer(let opponentId, let assetId, let memo, let amount):
+            return ["opponentId": opponentId, "assetId": assetId, "memo": memo, "amount": amount]
         default:
             return nil
         }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D526E09D20C09C5FCC005B8 /* Pods_SDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66D135DC8668A591B244C59 /* Pods_SDKDemo.framework */; };
 		5A25185A99208AF45F399787 /* Pods_FoxOnePaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A5D985B39A704795DED44E /* Pods_FoxOnePaySDK.framework */; };
+		7E15978C2295384400ABD28B /* WithDrawFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E15978B2295384400ABD28B /* WithDrawFee.swift */; };
 		7E6213182181C2CF0034EAF4 /* PaySDKEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6213172181C2CF0034EAF4 /* PaySDKEnviroment.swift */; };
 		7E62131A2181C3110034EAF4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6213192181C3110034EAF4 /* Currency.swift */; };
 		7E62131C2181C31C0034EAF4 /* CurrencyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62131B2181C31C0034EAF4 /* CurrencyInfo.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		1C0E76BBEB816132A37F5B7D /* Pods_SDKOCDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDKOCDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E15978B2295384400ABD28B /* WithDrawFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithDrawFee.swift; sourceTree = "<group>"; };
 		7E6213172181C2CF0034EAF4 /* PaySDKEnviroment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaySDKEnviroment.swift; sourceTree = "<group>"; };
 		7E6213192181C3110034EAF4 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7E62131B2181C31C0034EAF4 /* CurrencyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyInfo.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				C2146740216E037200CECBE1 /* Snapshot.swift */,
 				C2146739216E037200CECBE1 /* WalletAsset.swift */,
 				C23E76E2219D10C9007931FF /* User.swift */,
+				7E15978B2295384400ABD28B /* WithDrawFee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				C214674D216E037200CECBE1 /* PageInfo.swift in Sources */,
 				C2F36858213FC886001CFD49 /* RequestAuthAdapter.swift in Sources */,
 				C2F36856213FC886001CFD49 /* SecureData.swift in Sources */,
+				7E15978C2295384400ABD28B /* WithDrawFee.swift in Sources */,
 				C2146744216E037200CECBE1 /* Option.swift in Sources */,
 				C234F47D21B6AE7900A188BD /* PaySDKError.swift in Sources */,
 				C2146745216E037200CECBE1 /* WalletAsset.swift in Sources */,
