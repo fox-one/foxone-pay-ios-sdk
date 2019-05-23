@@ -21,7 +21,7 @@ public final class PaySDKService {
     public class func getAssets(completion: @escaping (Result<[Asset]>) -> Void) -> DataRequest {
         return NetworkManager.shared.request(api: PaySDKAPI.assets)
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<[Asset]>) in
-                    guard let mappedObject = Lists<Asset>(jsonData: json, key: "assets") else {
+                    guard let mappedObject = Lists<Asset>(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
                     }
                     return Result.success(mappedObject.items)
@@ -134,7 +134,7 @@ public final class PaySDKService {
         return NetworkManager.shared
                 .request(api: PaySDKAPI.supportAssets)
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<[Asset]>) in
-                    guard let mappedObject = Lists<Asset>(jsonData: json, key: "assets") else {
+                    guard let mappedObject = Lists<Asset>(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
                     }
                     return Result.success(mappedObject.items)

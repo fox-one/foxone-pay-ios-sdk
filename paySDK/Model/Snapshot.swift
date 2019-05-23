@@ -50,7 +50,7 @@ public struct Snapshot: Codable {
     public let amount: Double
     
     /// 创建时间
-    public let createdAt: TimeInterval
+    public let createAt: TimeInterval
     
     /// 备注
     public let memo: String

@@ -36,7 +36,7 @@ extension Snapshot: PaySDKMappable {
     public init?(jsonData: JSON) {
         amount = jsonData["amount"].doubleValue
         assetId = jsonData["assetId"].stringValue
-        createdAt = jsonData["createdAt"].doubleValue
+        createAt = jsonData["createAt"].doubleValue
         memo = jsonData["memo"].stringValue
         snapshotId = jsonData["snapshotId"].stringValue
         traceId = jsonData["traceId"].stringValue
