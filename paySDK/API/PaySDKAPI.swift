@@ -69,9 +69,9 @@ enum PaySDKAPI {
 
     var method: HTTPMethod {
         switch self {
-        case .withdraw, .hideAsset, .transfer:
+        case .withdraw, .hideAsset, .transfer, .validatePin:
             return .post
-        case .setPin, .validatePin, .changePin:
+        case .setPin, .changePin:
             return .put
         case .showAsset:
             return .delete
@@ -131,10 +131,10 @@ enum PaySDKAPI {
         case .config:
             return [foxCustomKeyHeader: PaySDK.shared.appKey ?? ""]
         default:
-            guard let pin = PaySDK.shared.delegate?.f1PIN() else {
+            guard let pin = PaySDK.shared.delegate?.f1PIN(), !pin.isEmpty else {
                 return nil
             }
-            return [foxCustomPinHeader: PinHelper.generatePinToken(with: pin)]
+            return [foxCustomPinHeader: SecureData.generateConfusionPinToken(pin: pin)]
         }
     }
 

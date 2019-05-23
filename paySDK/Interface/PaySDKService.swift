@@ -231,7 +231,7 @@ public final class PaySDKService {
     /// - Returns: 返回请求体
     @discardableResult
     public class func setPin(newPin: String, type: Int = 2, completion: @escaping (Result<Void>) -> Void) -> DataRequest {
-        let newPinToken = SecureData.generateConfusionPinToken(pin: newPin)
+        let newPinToken = PinHelper.generateConfusionPinToken(with: newPin)
         return NetworkManager.shared
                 .request(api: PaySDKAPI.setPin(newPinToken: newPinToken, type: type))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Void>) in
@@ -250,8 +250,8 @@ public final class PaySDKService {
     /// - Returns: 返回请求体
     @discardableResult
     public class func changePin(oldPin: String, newPin: String, type: Int = 2, completion: @escaping (Result<Void>) -> Void) -> DataRequest {
-        let newPinToken = SecureData.generateConfusionPinToken(pin: newPin)
-        let oldPinToken = PinHelper.generatePinToken(with: oldPin)
+        let newPinToken = PinHelper.generateConfusionPinToken(with: newPin)
+        let oldPinToken = PinHelper.generateConfusionPinToken(with: oldPin)
 
         return NetworkManager.shared
                 .request(api: PaySDKAPI.changePin(oldPinToken: oldPinToken, newPinToken: newPinToken, type: type))
@@ -269,7 +269,7 @@ public final class PaySDKService {
     /// - Returns: 返回请求体
     @discardableResult
     public class func validatePin(pin: String, completion: @escaping (Result<Void>) -> Void) -> DataRequest {
-        let pinToken = PinHelper.generatePinToken(with: pin)
+        let pinToken = PinHelper.generateConfusionPinToken(with: pin)
         return NetworkManager.shared
                 .request(api: PaySDKAPI.validatePin(pinToken: pinToken))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Void>) in

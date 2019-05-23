@@ -21,6 +21,14 @@ struct SecureData: Codable {
         case nonce = "n"
     }
     
+    init(hashPin: String) {
+        key = SecureData.hash(pin: hashPin)
+    }
+    
+    init(key: String) {
+        self.key = key
+    }
+    
     /// 生成PIN混淆之后的PinToken
     ///
     /// - Parameter pin: PIN
@@ -28,6 +36,11 @@ struct SecureData: Codable {
     static func generateConfusionPinToken(pin: String) -> String {
         let md5Pin = String(format: "fox.%@", pin).md5()
         return md5Pin.rsaToken ?? ""
+    }
+    
+    static func hash(pin: String) -> String {
+        let md5Pin = String(format: "fox.%@", pin).md5()
+        return md5Pin
     }
 }
 

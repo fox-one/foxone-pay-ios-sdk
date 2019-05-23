@@ -16,4 +16,8 @@ public class PinHelper {
     public static func generatePinToken(with pin: String) -> String {
         return SecureData(key: pin).jsonString?.rsaToken ?? ""
     }
+    
+    public static func generateConfusionPinToken(with pin: String) -> String {
+        return SecureData(hashPin: pin).jsonString?.rsaToken ?? ""
+    }
 }
