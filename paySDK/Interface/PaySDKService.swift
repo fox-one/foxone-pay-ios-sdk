@@ -39,7 +39,7 @@ public final class PaySDKService {
     public class func getAsset(with id: String, completion: @escaping (Result<Asset>) -> Void) -> DataRequest {
         return NetworkManager.shared.request(api: PaySDKAPI.asset(id: id))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Asset>) in
-                    guard let mappedObject = Asset(jsonData: json["asset"]) else {
+                    guard let mappedObject = Asset(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
                     }
 
@@ -116,7 +116,7 @@ public final class PaySDKService {
         return NetworkManager.shared
                 .request(api: PaySDKAPI.getSnapshot(id: id))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
-                    guard let mappedObject = Snapshot(jsonData: json["snapshot"]) else {
+                    guard let mappedObject = Snapshot(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
                     }
 
@@ -162,7 +162,7 @@ public final class PaySDKService {
         return NetworkManager.shared
                 .request(api: PaySDKAPI.withdraw(assetId: assetId, address: address, amount: amount, memo: memo, label: label))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
-                    guard let mappedObject = Snapshot(jsonData: json["snapshot"]) else {
+                    guard let mappedObject = Snapshot(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
                     }
 
@@ -190,7 +190,7 @@ public final class PaySDKService {
         return NetworkManager.shared
             .request(api: PaySDKAPI.transfer(opponentId: userId, assetId: assetId, memo: memo, amount: amount))
             .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
-                guard let mappedObject = Snapshot(jsonData: json["snapshot"]) else {
+                guard let mappedObject = Snapshot(jsonData: json) else {
                     return Result.failure(ErrorCode.dataError)
                 }
                 
