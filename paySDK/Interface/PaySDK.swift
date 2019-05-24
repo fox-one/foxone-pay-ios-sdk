@@ -27,10 +27,10 @@ public protocol PaySDKProtcol: NSObjectProtocol {
 }
 
 public final class PaySDK {
-    internal static let shared = PaySDK()
+    public static let shared = PaySDK()
     internal var defalutConfig = SDKConfig()
     
-    internal var publicKey: String {
+    public var publicKey: String {
         guard let pubKey = self.delegate?.f1PublicKey?() else {
             return defalutConfig.env.defaultPublicKey
         }
@@ -47,7 +47,7 @@ public final class PaySDK {
 
     internal var appKey: String?
 
-    internal weak var delegate: PaySDKProtcol?
+    public weak var delegate: PaySDKProtcol?
 
     /// 注册 PaySDK
     public static func registerSDK(key: String, delegate: PaySDKProtcol, env: SDKEnviroment = .product ) {
