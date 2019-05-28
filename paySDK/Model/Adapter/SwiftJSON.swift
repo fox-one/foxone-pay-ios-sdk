@@ -15,18 +15,18 @@ internal protocol PaySDKMappable {
 
 extension WalletAsset: PaySDKMappable {
     init?(jsonData: JSON) {
-        assetId = jsonData["assetId"].stringValue
+        assetId = jsonData["asset_id"].stringValue
         name = jsonData["name"].stringValue
         symbol = jsonData["symbol"].stringValue
         icon = jsonData["icon"].stringValue
-        chainId = jsonData["chainId"].stringValue
+        chainId = jsonData["chain_id"].stringValue
         
         price = jsonData["price"].doubleValue
-        changeBTCPercentage = jsonData["changeBtc"].doubleValue
-        changeUSDPercentage = jsonData["changeUsd"].doubleValue
-        priceBTC = jsonData["priceBtc"].doubleValue
-        priceUSD = jsonData["priceUsd"].doubleValue
-        changeRMBPercentage = jsonData["changeUsd"].doubleValue
+        changeBTCPercentage = jsonData["change_btc"].doubleValue
+        changeUSDPercentage = jsonData["change_usd"].doubleValue
+        priceBTC = jsonData["price_btc"].doubleValue
+        priceUSD = jsonData["price_usd"].doubleValue
+        changeRMBPercentage = jsonData["change_usd"].doubleValue
         
     }
 }
@@ -35,17 +35,17 @@ extension Snapshot: PaySDKMappable {
     
     public init?(jsonData: JSON) {
         amount = jsonData["amount"].doubleValue
-        assetId = jsonData["assetId"].stringValue
-        createAt = jsonData["createAt"].doubleValue
+        assetId = jsonData["asset_id"].stringValue
+        createAt = jsonData["create_at"].doubleValue
         memo = jsonData["memo"].stringValue
-        snapshotId = jsonData["snapshotId"].stringValue
-        traceId = jsonData["traceId"].stringValue
-        transactionHash = jsonData["transactionHash"].stringValue
-        opponentId = jsonData["opponentId"].stringValue
+        snapshotId = jsonData["snapshot_id"].stringValue
+        traceId = jsonData["trace_id"].stringValue
+        transactionHash = jsonData["transaction_hash"].stringValue
+        opponentId = jsonData["opponent_id"].stringValue
         receiver = jsonData["receiver"].stringValue
         sender = jsonData["sender"].stringValue
         source = jsonData["source"].stringValue
-        userId = jsonData["userId"].stringValue
+        userId = jsonData["user_id"].stringValue
 
         opponent = Opponent(jsonData: jsonData["opponent"])
         asset = Asset(jsonData: jsonData["asset"])
@@ -55,36 +55,36 @@ extension Snapshot: PaySDKMappable {
 extension Fee: PaySDKMappable {
     init?(jsonData: JSON) {
         amount = jsonData["amount"].doubleValue
-        assetId = jsonData["assetId"].stringValue
-        assetSymbol = jsonData["assetSymbol"].stringValue
+        assetId = jsonData["asset_id"].stringValue
+        assetSymbol = jsonData["asset_symbol"].stringValue
     }
 }
 
 extension WithDrawFee: PaySDKMappable {
     init?(jsonData: JSON) {
-        feeAsset = Asset(jsonData: jsonData["feeAsset"])
-        feeAmount = jsonData["feeAmount"].doubleValue
+        feeAsset = Asset(jsonData: jsonData["fee_asset"])
+        feeAmount = jsonData["fee_amount"].doubleValue
         fee = Fee(jsonData: jsonData["fee"])
     }
 }
 
 extension Asset: PaySDKMappable {
     init?(jsonData: JSON) {
-        assetId = jsonData["assetId"].stringValue
+        assetId = jsonData["asset_id"].stringValue
         balance = jsonData["balance"].doubleValue
-        chainId = jsonData["chainId"].stringValue
-        changeBTCPercentage = jsonData["changeBtc"].doubleValue
-        changeUSDPercentage = jsonData["changeUsd"].doubleValue
-        changeRMBPercentage = jsonData["changeUsd"].doubleValue
+        chainId = jsonData["chain_id"].stringValue
+        changeBTCPercentage = jsonData["change_btc"].doubleValue
+        changeUSDPercentage = jsonData["change_usd"].doubleValue
+        changeRMBPercentage = jsonData["change"].doubleValue
         icon = jsonData["icon"].stringValue
         name = jsonData["name"].stringValue
         price = jsonData["price"].doubleValue
-        priceBTC = jsonData["priceBtc"].doubleValue
-        priceUSD = jsonData["priceUsd"].doubleValue
-        publicKey = jsonData["publicKey"].stringValue
+        priceBTC = jsonData["price_btc"].doubleValue
+        priceUSD = jsonData["price_usd"].doubleValue
+        publicKey = jsonData["public_key"].stringValue
         symbol = jsonData["symbol"].stringValue
-        accountName = jsonData["accountName"].stringValue
-        accountTag = jsonData["accountTag"].stringValue
+        accountName = jsonData["account_name"].stringValue
+        accountTag = jsonData["account_tag"].stringValue
         chain = WalletAsset(jsonData: jsonData["chain"])
         option = Option(jsonData: jsonData["option"]) ?? Option(hide: false)
     }
@@ -99,8 +99,8 @@ extension Option: PaySDKMappable {
 
 extension Opponent: PaySDKMappable {
     init?(jsonData: JSON) {
-        foxId = jsonData["foxId"].intValue
-        mixinId = jsonData["mixinId"].stringValue
+        foxId = jsonData["fox_id"].intValue
+        mixinId = jsonData["mixin_id"].stringValue
         avatar = jsonData["avatar"].stringValue
         fullname = jsonData["fullname"].stringValue
     }
@@ -108,7 +108,7 @@ extension Opponent: PaySDKMappable {
 
 extension CNYTicker: PaySDKMappable {
     init?(jsonData: JSON) {
-        changeIn24h = jsonData["changeIn24h"].stringValue
+        changeIn24h = jsonData["change_in_24h"].stringValue
         from = jsonData["from"].stringValue
         price = jsonData["price"].stringValue
         timestamp = jsonData["timestamp"].doubleValue
@@ -126,18 +126,18 @@ extension Currency: PaySDKMappable {
 extension CurrencyInfo: PaySDKMappable {
     init?(jsonData: JSON) {
         currency = Currency(jsonData: jsonData["currencies"])
-        cnyTickers = jsonData["cnyTickers"].arrayValue.compactMap { CNYTicker(jsonData: $0) }
+        cnyTickers = jsonData["cny_tickers"].arrayValue.compactMap { CNYTicker(jsonData: $0) }
     }
 }
 
 extension User: PaySDKMappable {
     init?(jsonData: JSON) {
-        id = jsonData["userId"].stringValue
+        id = jsonData["user_id"].stringValue
         avatar = jsonData["avatar"].stringValue
         email = jsonData["email"].stringValue
         name = jsonData["fullname"].stringValue
-        isActive = jsonData["isActive"].boolValue
-        isPinSet = jsonData["isPinSet"].boolValue
-        pinType = jsonData["pinType"].intValue
+        isActive = jsonData["is_active"].boolValue
+        isPinSet = jsonData["is_pinset"].boolValue
+        pinType = jsonData["pin_type"].intValue
     }
 }

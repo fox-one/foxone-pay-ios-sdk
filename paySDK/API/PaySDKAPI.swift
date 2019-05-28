@@ -55,9 +55,9 @@ enum PaySDKAPI {
         case .validatePin:
             return "/account/pin-verify"
         case .hideAsset:
-            return "/wallet/asset/hide"
+            return "/wallet/asset/option"
         case .showAsset:
-            return "/wallet/asset/hide"
+            return "/wallet/asset/option"
         case .currency:
             return "/trade-data/currency"
         case .transfer:
@@ -69,12 +69,10 @@ enum PaySDKAPI {
 
     var method: HTTPMethod {
         switch self {
-        case .withdraw, .hideAsset, .transfer, .validatePin:
+        case .withdraw, .hideAsset, .transfer, .validatePin, .showAsset:
             return .post
         case .setPin, .changePin:
             return .put
-        case .showAsset:
-            return .delete
         default:
             return .get
         }
@@ -85,15 +83,15 @@ enum PaySDKAPI {
         case .snapshots(let cursor, let limit):
             return ["cursor": cursor, "limit": limit]
         case .snapshot(let id, let cursor, let limit):
-            return ["assetId": id, "cursor": cursor, "limit": limit]
+            return ["asset_id": id, "cursor": cursor, "limit": limit]
         case .withdraw(let assetId, let address, let amount, let memo, let label):
-            var param: [String: Any] = ["publicKey": address, "amount": amount, "assetId": assetId, "memo": memo]
+            var param: [String: Any] = ["public_key": address, "amount": amount, "asset_id": assetId, "memo": memo]
             if !label.isEmpty {
                 param["label"] = label
             }
             return param
         case .fee(let id, let address, let label):
-            var param: [String: Any] = ["assetId": id, "publicKey": address, "label": label]
+            var param: [String: Any] = ["asset_id": id, "public_key": address, "label": label]
             if !label.isEmpty {
                 param["label"] = label
             }
@@ -101,13 +99,22 @@ enum PaySDKAPI {
         case .supportAssets:
             return ["entirechain": "1"]
         case .setPin(let newPinToken, let type):
-            return ["pinType": type, "newPinToken": newPinToken]
+            return ["pin_type": type, "new_pin_token": newPinToken]
         case .changePin(_, let newPinToken, let type):
-            return ["pinType": type, "newPinToken": newPinToken]
-        case .showAsset(let id), .hideAsset(let id):
-            return ["id": id]
+            return ["pin_type": type, "new_pin_token": newPinToken]
         case .transfer(let opponentId, let assetId, let memo, let amount):
-            return ["opponentId": opponentId, "assetId": assetId, "memo": memo, "amount": amount]
+            return ["opponent_id": opponentId, "asset_id": assetId, "memo": memo, "amount": amount]
+        default:
+            return nil
+        }
+    }
+    
+    var body: Any? {
+        switch self {
+        case .showAsset(let id):
+            return [["asset_id": id, "hide": false]]
+        case .hideAsset(let id):
+            return [["asset_id": id, "hide": true]]
         default:
             return nil
         }
