@@ -141,7 +141,7 @@ enum PaySDKAPI {
             guard let pin = PaySDK.shared.delegate?.f1PIN(), !pin.isEmpty else {
                 return nil
             }
-            return [foxCustomPinHeader: SecureData.generateConfusionPinToken(pin: pin)]
+            return [foxCustomPinHeader: PinHelper.generateConfusionPinToken(with: pin)]
         }
     }
 
