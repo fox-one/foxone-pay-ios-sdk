@@ -20,19 +20,19 @@ extension WalletAsset: PaySDKMappable {
         symbol = jsonData["symbol"].stringValue
         icon = jsonData["icon"].stringValue
         chainId = jsonData["chain_id"].stringValue
-        
+
         price = jsonData["price"].doubleValue
         changeBTCPercentage = jsonData["change_btc"].doubleValue
         changeUSDPercentage = jsonData["change_usd"].doubleValue
         priceBTC = jsonData["price_btc"].doubleValue
         priceUSD = jsonData["price_usd"].doubleValue
         changeRMBPercentage = jsonData["change_usd"].doubleValue
-        
+
     }
 }
 
 extension Snapshot: PaySDKMappable {
-    
+
     public init?(jsonData: JSON) {
         amount = jsonData["amount"].doubleValue
         assetId = jsonData["asset_id"].stringValue
@@ -126,7 +126,9 @@ extension Currency: PaySDKMappable {
 extension CurrencyInfo: PaySDKMappable {
     init?(jsonData: JSON) {
         currency = Currency(jsonData: jsonData["currencies"])
-        cnyTickers = jsonData["cny_tickers"].arrayValue.compactMap { CNYTicker(jsonData: $0) }
+        cnyTickers = jsonData["cny_tickers"].arrayValue.compactMap {
+            CNYTicker(jsonData: $0)
+        }
     }
 }
 

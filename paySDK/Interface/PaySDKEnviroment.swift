@@ -10,7 +10,7 @@ import Foundation
 public enum SDKEnviroment: Int {
     case dev
     case product
-    
+
     var serverApi: String {
         switch self {
         case .dev:
@@ -19,7 +19,7 @@ public enum SDKEnviroment: Int {
             return "https://api.kumiclub.com/api"
         }
     }
-    
+
     var defaultPublicKey: String {
         switch self {
         case .dev:

@@ -12,10 +12,10 @@ import Foundation
 public protocol PaySDKProtcol: NSObjectProtocol {
     /// AccessToken
     func f1AccessToken() -> String
-    
+
     /// PIN
     func f1PIN() -> String
-    
+
     /// PIN加密使用的公钥匙
     @objc optional func f1PublicKey() -> String
 
@@ -29,7 +29,7 @@ public protocol PaySDKProtcol: NSObjectProtocol {
 public final class PaySDK {
     public static let shared = PaySDK()
     internal var defalutConfig = SDKConfig()
-    
+
     public var publicKey: String {
         guard let pubKey = self.delegate?.f1PublicKey?() else {
             return defalutConfig.env.defaultPublicKey
@@ -50,7 +50,7 @@ public final class PaySDK {
     public weak var delegate: PaySDKProtcol?
 
     /// 注册 PaySDK
-    public static func registerSDK(key: String, delegate: PaySDKProtcol, env: SDKEnviroment = .product ) {
+    public static func registerSDK(key: String, delegate: PaySDKProtcol, env: SDKEnviroment = .product) {
         PaySDK.shared.appKey = key
         PaySDK.shared.delegate = delegate
         PaySDK.shared.defalutConfig.env = env

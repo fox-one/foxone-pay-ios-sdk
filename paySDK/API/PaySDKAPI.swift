@@ -108,7 +108,7 @@ enum PaySDKAPI {
             return nil
         }
     }
-    
+
     var body: Any? {
         switch self {
         case .showAsset(let id):

@@ -15,12 +15,12 @@ public struct PageInfo: PaySDKMappable {
     public let nextCursor: String
     // 是否有下一页
     public let hasNext: Bool
-    
+
     init?(jsonData: JSON) {
         nextCursor = jsonData["nextCursor"].stringValue
         hasNext = jsonData["hasNext"].boolValue
     }
-    
+
     init() {
         nextCursor = ""
         hasNext = false

@@ -169,8 +169,8 @@ public final class PaySDKService {
                     return Result.success(mappedObject)
                 })
     }
-    
-    
+
+
     /// 转账
     /// （必须在PaySDK的接口中传入PIN）
     ///
@@ -188,14 +188,14 @@ public final class PaySDKService {
                                memo: String,
                                completion: @escaping (Result<Snapshot>) -> Void) -> DataRequest {
         return NetworkManager.shared
-            .request(api: PaySDKAPI.transfer(opponentId: userId, assetId: assetId, memo: memo, amount: amount))
-            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
-                guard let mappedObject = Snapshot(jsonData: json) else {
-                    return Result.failure(ErrorCode.dataError)
-                }
-                
-                return Result.success(mappedObject)
-            })
+                .request(api: PaySDKAPI.transfer(opponentId: userId, assetId: assetId, memo: memo, amount: amount))
+                .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
+                    guard let mappedObject = Snapshot(jsonData: json) else {
+                        return Result.failure(ErrorCode.dataError)
+                    }
+
+                    return Result.success(mappedObject)
+                })
     }
 
     /// 获取转账手续费
@@ -293,7 +293,7 @@ public final class PaySDKService {
                             return Result.success(currenyInfo)
                         })
     }
-    
+
     /// 获取公钥
     ///
     /// - Parameter completion: 公钥
@@ -301,20 +301,20 @@ public final class PaySDKService {
     @discardableResult
     class func getConfig(completion: @escaping (Result<String>) -> Void) -> DataRequest {
         return NetworkManager.shared
-            .request(api: PaySDKAPI.config)
-            .hanleEnvelopResponseData(completion: completion,
-                                      handler: { json -> (Result<String>) in
-                                        let publicKey = json["crypto"]["publicKey"].stringValue
-                                        if publicKey.isEmpty {
-                                            return Result.failure(ErrorCode.dataError)
-                                        } else {
-                                            return Result.success(publicKey)
-                                        }
-                                        
-            })
+                .request(api: PaySDKAPI.config)
+                .hanleEnvelopResponseData(completion: completion,
+                        handler: { json -> (Result<String>) in
+                            let publicKey = json["crypto"]["publicKey"].stringValue
+                            if publicKey.isEmpty {
+                                return Result.failure(ErrorCode.dataError)
+                            } else {
+                                return Result.success(publicKey)
+                            }
+
+                        })
     }
-    
-    
+
+
     /// 获取用户信息
     ///
     /// - Parameter completion: 用户
@@ -322,15 +322,15 @@ public final class PaySDKService {
     @discardableResult
     public class func getUser(completion: @escaping (Result<User>) -> Void) -> DataRequest {
         return NetworkManager.shared
-            .request(api: PaySDKAPI.user)
-            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<User>) in
-                guard let mappedObject = User(jsonData: json["user"]) else {
-                    return Result.failure(ErrorCode.dataError)
-                }
-                
-                return Result.success(mappedObject)
-            })
-        
+                .request(api: PaySDKAPI.user)
+                .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<User>) in
+                    guard let mappedObject = User(jsonData: json["user"]) else {
+                        return Result.failure(ErrorCode.dataError)
+                    }
+
+                    return Result.success(mappedObject)
+                })
+
     }
 }
 

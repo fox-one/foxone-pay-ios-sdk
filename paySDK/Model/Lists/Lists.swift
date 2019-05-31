@@ -23,7 +23,7 @@ class Lists<T: PaySDKMappable> {
                 T(jsonData: $0)
             }
         }
-        
+
         self.pagination = PageInfo(jsonData: jsonData["pagination"]) ?? PageInfo()
     }
 }

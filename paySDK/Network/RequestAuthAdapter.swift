@@ -19,7 +19,7 @@ class RequestAuthAdapter: RequestAdapter {
             if let accessToken = PaySDK.shared.delegate?.f1AccessToken() {
                 urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
             }
-            
+
             let header: [String: String]
             if let f1Header = PaySDK.shared.delegate?.f1HttpHeader?() {
                 header = f1Header
@@ -28,7 +28,7 @@ class RequestAuthAdapter: RequestAdapter {
                 let appVersion = PaySDK.shared.defalutConfig.sdkVerison
                 let clientType = "5"
                 let uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
-                
+
                 header = [
                     "x-client-build": buildVersion,
                     "x-client-type": clientType,
@@ -36,12 +36,12 @@ class RequestAuthAdapter: RequestAdapter {
                     "x-client-device-id": uuid
                 ]
             }
-            
+
             header.forEach { key, value in
                 urlRequest.setValue(value, forHTTPHeaderField: key)
             }
         }
-        
+
         return urlRequest
     }
 }

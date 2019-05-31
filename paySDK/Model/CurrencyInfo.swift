@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 // 汇率信息
 public struct CurrencyInfo {
     // 币种汇率

@@ -20,15 +20,15 @@ struct SecureData: Codable {
         case time = "t"
         case nonce = "n"
     }
-    
+
     init(hashPin: String) {
         key = SecureData.hash(pin: hashPin)
     }
-    
+
     init(key: String) {
         self.key = key
     }
-    
+
     /// 生成PIN混淆之后的PinToken
     ///
     /// - Parameter pin: PIN
@@ -37,7 +37,7 @@ struct SecureData: Codable {
         let md5Pin = String(format: "fox.%@", pin).md5()
         return md5Pin.rsaToken ?? ""
     }
-    
+
     static func hash(pin: String) -> String {
         let md5Pin = String(format: "fox.%@", pin).md5()
         return md5Pin
@@ -62,12 +62,12 @@ extension String {
             let publicKey = try PublicKey(pemEncoded: pubkicString)
             let clear = try ClearMessage(string: self, using: .utf8)
             let encrypted = try clear.encrypted(with: publicKey, padding: .OAEP)
-#if DEBUG
+            #if DEBUG
             print("====== Fox.One ======")
             print("pinToken= \(encrypted.base64String)")
             print("====== Fox.One ======")
-#else
-#endif
+            #else
+            #endif
 
             return encrypted.base64String
         } catch {
