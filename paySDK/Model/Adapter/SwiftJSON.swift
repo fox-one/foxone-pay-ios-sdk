@@ -20,13 +20,12 @@ extension WalletAsset: PaySDKMappable {
         symbol = jsonData["symbol"].stringValue
         icon = jsonData["icon"].stringValue
         chainId = jsonData["chain_id"].stringValue
-
         price = jsonData["price"].doubleValue
         changeBTCPercentage = jsonData["change_btc"].doubleValue
         changeUSDPercentage = jsonData["change_usd"].doubleValue
         priceBTC = jsonData["price_btc"].doubleValue
         priceUSD = jsonData["price_usd"].doubleValue
-        changeRMBPercentage = jsonData["change_usd"].doubleValue
+        changeCNYPercentage = jsonData["change"].doubleValue
 
     }
 }
@@ -75,7 +74,7 @@ extension Asset: PaySDKMappable {
         chainId = jsonData["chain_id"].stringValue
         changeBTCPercentage = jsonData["change_btc"].doubleValue
         changeUSDPercentage = jsonData["change_usd"].doubleValue
-        changeRMBPercentage = jsonData["change"].doubleValue
+        changeCNYPercentage = jsonData["change"].doubleValue
         icon = jsonData["icon"].stringValue
         name = jsonData["name"].stringValue
         price = jsonData["price"].doubleValue

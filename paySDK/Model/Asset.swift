@@ -20,7 +20,7 @@ public struct Asset: Codable {
     public let icon: String
     // 名称bre
     public let name: String
-    // 当前价格 rmb计价
+    // 当前价格 cny计价
     public let price: Double
     // 当前价格 btc计价
     public let priceBTC: Double
@@ -30,8 +30,8 @@ public struct Asset: Codable {
     public let publicKey: String
     // 符号
     public let symbol: String
-    // 价格变化，RMB计价
-    public let changeRMBPercentage: Double
+    // 价格变化，CNY计价
+    public let changeCNYPercentage: Double
     // 价格变化，BTC计价
     public let changeBTCPercentage: Double
     // 价格变化，USD计价

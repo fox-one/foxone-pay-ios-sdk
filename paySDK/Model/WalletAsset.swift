@@ -19,19 +19,6 @@ public struct WalletAsset: Codable {
     public let priceBTC: Double
     public let changeUSDPercentage: Double
     public let changeBTCPercentage: Double
-    public let changeRMBPercentage: Double
+    public let changeCNYPercentage: Double
 
-//    public init(price: Double, changeUsd: Double, assetID: String, chainID: String, name: String, symbol: String, icon: String, priceUSD: Double, priceBTC: Double, change: Double, changeBtc: Double) {
-//        self.price = price
-//        self.changeUSDPercentage = changeUsd
-//        self.assetId = assetID
-//        self.chainId = chainID
-//        self.name = name
-//        self.symbol = symbol
-//        self.icon = icon
-//        self.priceUSD = priceUSD
-//        self.priceBTC = priceBTC
-//        self.changeRMBPercentage = change
-//        self.changeBTCPercentage = changeBtc
-//    }
 }
