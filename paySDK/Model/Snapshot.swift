@@ -38,6 +38,14 @@ public enum SnapshotType: String {
     case fox_redpacket_pay = "FOX_REDPACKET_PAY"
     case fox_redpacket_reward = "FOX_REDPACKET_REWARD"
     case fox_redpacket_refund = "FOX_REDPACKET_REFUND"
+    case f1ex_put_order = "F1EX_PUT_ORDER"
+    case f1ex_order_refund = "F1EX_ORDER_REFUND"
+    case f1ex_order_canceled = "F1EX_ORDER_CANCELED"
+    case f1ex_order_matched = "F1EX_ORDER_MATCHED"
+    case efox_put_order = "EFOX_PUT_ORDER"
+    case efox_order_refund = "EFOX_ORDER_REFUND"
+    case efox_order_filled = "EFOX_ORDER_FILLED"
+    
 }
 
 /// 交易记录
