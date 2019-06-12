@@ -19,8 +19,10 @@ public struct ErrorCode {
     let errorCode = [
         1: "INVALID_OPERATION_MSG".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         3: "SERVER_FALUT_MSG".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
+        4: "login_err_frequently".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1538: "user_not_found".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1537: "user_not_logged".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
+        1552: "pin_err_frequently".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1553: "pin_not_set_message".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1554: "incorrect_pin_message".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1601: "invalid_public_key".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
