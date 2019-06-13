@@ -103,7 +103,7 @@ enum PaySDKAPI {
         case .changePin(_, let newPinToken, let type):
             return ["pin_type": type, "new_pin_token": newPinToken]
         case .transfer(let opponentId, let assetId, let memo, let amount):
-            return ["opponent_id": opponentId, "asset_id": assetId, "memo": memo, "amount": amount]
+            return ["counter_user_id": opponentId, "asset_id": assetId, "memo": memo, "amount": amount ,"trace_id": UUID().uuidString]
         default:
             return nil
         }
