@@ -18,32 +18,6 @@ final class NetworkManager {
         sessionManager.adapter = RequestAuthAdapter()
     }
 
-    func request1(api: PaySDKAPI) -> DataRequest {
-        return sessionManager
-                .request(api.url,
-                        method: api.method,
-                        parameters: api.parameters,
-                        encoding: api.parameterEncoding,
-                        headers: api.headers)
-                .validate({ _, response, data -> Request.ValidationResult in
-                    var acceptableStatusCodes: [Int] {
-                        return Array(200..<300)
-                    }
-
-                    if acceptableStatusCodes.contains(response.statusCode) {
-                        return .success
-                    } else {
-                        guard let data = data else {
-                            return .failure(ErrorCode.dataError)
-                        }
-
-                        let json = JSON(data)
-                        let statusCode = json["code"].intValue
-                        return .failure(PaySDKError.error(code: statusCode, message: ErrorCode.errorMessage(for: statusCode) ?? json["msg"].stringValue))
-                    }
-                })
-    }
-
     func request(api: PaySDKAPI) -> DataRequest {
         var originalRequest: URLRequest?
         let options = JSONSerialization.WritingOptions()

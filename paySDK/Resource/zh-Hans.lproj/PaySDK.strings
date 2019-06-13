@@ -17,3 +17,5 @@
 "invalid_amount" = "无效金额";
 "amount_too_small" = "金额太小";
 "address_unavaliable" = "你不能给自己转账";
+"pin_err_frequently" = "输入PIN太频繁，请稍候再试";
+"login_err_frequently"    = "请求太频繁，请稍候再试";
