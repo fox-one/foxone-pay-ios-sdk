@@ -33,6 +33,6 @@ let productKey = """
                  """
 
 struct SDKConfig {
-    let sdkVerison = "2.0.0"
+    let sdkVerison = "3.0.0"
     var env: SDKEnviroment = .product
 }
