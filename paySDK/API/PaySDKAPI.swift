@@ -85,10 +85,13 @@ enum PaySDKAPI {
         case .snapshot(let id, let cursor, let limit):
             return ["asset_id": id, "cursor": cursor, "limit": limit]
         case .withdraw(let assetId, let address, let amount, let memo, let label):
-            var param: [String: Any] = ["public_key": address, "amount": amount, "asset_id": assetId, "memo": memo]
+            var param: [String: Any] = [:]
             if !label.isEmpty {
-                param["label"] = label
+                param = ["account_name": address, "account_tag":label, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString]
+            } else {
+                param = ["public_key": address, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString]
             }
+            
             return param
         case .fee(let id, let address, let label):
             var param: [String: Any] = ["asset_id": id, "public_key": address, "label": label]
