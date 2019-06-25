@@ -17,8 +17,8 @@ public struct PageInfo: PaySDKMappable {
     public let hasNext: Bool
 
     init?(jsonData: JSON) {
-        nextCursor = jsonData["nextCursor"].stringValue
-        hasNext = jsonData["hasNext"].boolValue
+        nextCursor = jsonData["next_cursor"].stringValue
+        hasNext = jsonData["has_next"].boolValue
     }
 
     init() {
