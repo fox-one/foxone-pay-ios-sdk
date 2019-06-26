@@ -87,9 +87,9 @@ enum PaySDKAPI {
         case .withdraw(let assetId, let address, let amount, let memo, let label):
             var param: [String: Any] = [:]
             if !label.isEmpty {
-                param = ["account_name": address, "account_tag":label, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString]
+                param = ["account_name": address, "account_tag":label, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString.lowercased()]
             } else {
-                param = ["public_key": address, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString]
+                param = ["public_key": address, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString.lowercased()]
             }
             
             return param
