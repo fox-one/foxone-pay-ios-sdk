@@ -25,7 +25,7 @@ enum PaySDKAPI {
     case hideAsset(id: String)
     case showAsset(id: String)
     case currency
-    case transfer(opponentId: String, assetId: String, memo: String, amount: String)
+    case transfer(opponentId: String, assetId: String, memo: String, amount: String, traceId: String)
     case user
 
     var path: String {
@@ -105,8 +105,8 @@ enum PaySDKAPI {
             return ["pin_type": type, "new_pin_token": newPinToken]
         case .changePin(_, let newPinToken, let type):
             return ["pin_type": type, "new_pin_token": newPinToken]
-        case .transfer(let opponentId, let assetId, let memo, let amount):
-            return ["opponent_id": opponentId, "asset_id": assetId, "memo": memo, "amount": amount ,"trace_id": UUID().uuidString.lowercased()]
+        case .transfer(let opponentId, let assetId, let memo, let amount, let traceId):
+            return ["opponent_id": opponentId, "asset_id": assetId, "memo": memo, "amount": amount ,"trace_id": traceId]
         default:
             return nil
         }

@@ -186,9 +186,11 @@ public final class PaySDKService {
                                amount: String,
                                assetId: String,
                                memo: String,
+                               traceId: String? = nil,
                                completion: @escaping (Result<Snapshot>) -> Void) -> DataRequest {
+        let trace = traceId ?? UUID().uuidString
         return NetworkManager.shared
-                .request(api: PaySDKAPI.transfer(opponentId: userId, assetId: assetId, memo: memo, amount: amount))
+                .request(api: PaySDKAPI.transfer(opponentId: userId, assetId: assetId, memo: memo, amount: amount, traceId: trace.lowercased()))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
                     guard let mappedObject = Snapshot(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
