@@ -334,6 +334,24 @@ public final class PaySDKService {
                 })
 
     }
+    
+    /// 获取钱包用户信息
+    ///
+    /// - Parameter completion: 钱包id
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func getWalletUser(walletId: String, completion: @escaping (Result<User>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.walletUser(id: walletId))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<User>) in
+                guard let mappedObject = User(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                
+                return Result.success(mappedObject)
+            })
+        
+    }
 }
 
 extension DataRequest {

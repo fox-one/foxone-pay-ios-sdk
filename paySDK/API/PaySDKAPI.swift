@@ -27,6 +27,7 @@ enum PaySDKAPI {
     case currency
     case transfer(opponentId: String, assetId: String, memo: String, amount: String, traceId: String)
     case user
+    case walletUser(id: String)
 
     var path: String {
         switch self {
@@ -64,6 +65,8 @@ enum PaySDKAPI {
             return "/wallet/transfer"
         case .user:
             return "/account/detail"
+        case .walletUser(let id):
+            return "/wallet/user/\(id)"
         }
     }
 
