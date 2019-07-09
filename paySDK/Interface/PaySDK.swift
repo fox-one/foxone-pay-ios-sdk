@@ -48,6 +48,8 @@ public final class PaySDK {
     internal var appKey: String?
 
     public weak var delegate: PaySDKProtcol?
+    
+    public var debugLog: Bool = false
 
     /// 注册 PaySDK
     public static func registerSDK(key: String, delegate: PaySDKProtcol, env: SDKEnviroment = .product) {

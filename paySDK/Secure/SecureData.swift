@@ -63,9 +63,13 @@ extension String {
             let clear = try ClearMessage(string: self, using: .utf8)
             let encrypted = try clear.encrypted(with: publicKey, padding: .OAEP)
             #if DEBUG
-            print("====== Fox.One ======")
-            print("pinToken= \(encrypted.base64String)")
-            print("====== Fox.One ======")
+            
+            if PaySDK.shared.debugLog {
+                print("====== Fox.One ======")
+                print("pinToken= \(encrypted.base64String)")
+                print("====== Fox.One ======")
+            }
+            
             #else
             #endif
 
