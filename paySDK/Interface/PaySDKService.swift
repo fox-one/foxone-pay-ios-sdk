@@ -352,6 +352,53 @@ public final class PaySDKService {
             })
         
     }
+    
+    /// 获取地址薄
+    ///
+    /// - Parameter completion: 资产id
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func getAddress(assetId: String, completion: @escaping (Result<[Address]>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.getAddresses(assedId: assetId))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<[Address]>) in
+                guard let mappedObject = Lists<Address>(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                
+                return Result.success(mappedObject.items)
+            })
+    }
+    
+    /// 修改地址
+    ///
+    /// - Parameter completion: 地址id
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func addAddress(assetId: String, label: String, publicKey: String, accountName: String, accountTag: String, completion: @escaping (Result<Address>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.addAddress(assedId: assetId, label: label, publicKey: publicKey, accountName: accountName, accountTag: accountTag))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Address>) in
+                guard let mappedObject = Address(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                
+                return Result.success(mappedObject)
+            })
+    }
+    
+    /// 删除地址
+    ///
+    /// - Parameter completion: 地址id
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func removeAddress(addressId: String, completion: @escaping (Result<Void>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.removeAddress(addressId: addressId))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Void>) in
+                return Result.success(())
+            })
+    }
 }
 
 extension DataRequest {

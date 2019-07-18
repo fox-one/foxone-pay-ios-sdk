@@ -28,6 +28,9 @@ enum PaySDKAPI {
     case transfer(opponentId: String, assetId: String, memo: String, amount: String, traceId: String)
     case user
     case walletUser(id: String)
+    case getAddresses(assedId: String)
+    case addAddress(assedId: String,label: String, publicKey: String, accountName: String, accountTag: String)
+    case removeAddress(addressId: String)
 
     var path: String {
         switch self {
@@ -67,12 +70,18 @@ enum PaySDKAPI {
             return "/account/detail"
         case .walletUser(let id):
             return "/wallet/user/\(id)"
+        case .getAddresses:
+            return "/wallet/addresses"
+        case .addAddress:
+            return "/wallet/address"
+        case .removeAddress(let id):
+            return "/wallet/address\(id)"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .withdraw, .hideAsset, .transfer, .validatePin, .showAsset:
+        case .withdraw, .hideAsset, .transfer, .validatePin, .showAsset, .addAddress, .removeAddress:
             return .post
         case .setPin, .changePin:
             return .put
@@ -110,6 +119,10 @@ enum PaySDKAPI {
             return ["pin_type": type, "new_pin_token": newPinToken]
         case .transfer(let opponentId, let assetId, let memo, let amount, let traceId):
             return ["opponent_id": opponentId, "asset_id": assetId, "memo": memo, "amount": amount ,"trace_id": traceId]
+        case .getAddresses(let assedId):
+            return ["asset_id": assedId]
+        case .addAddress(let assedId ,let label, let publicKey, let accountName, let accountTag):
+            return ["asset_id": assedId, "label": label, "public_key": publicKey, "account_name": accountName, "account_tag": accountTag]
         default:
             return nil
         }

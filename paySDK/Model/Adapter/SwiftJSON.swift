@@ -142,3 +142,14 @@ extension User: PaySDKMappable {
         pinType = jsonData["pin_type"].intValue
     }
 }
+
+extension Address: PaySDKMappable {
+    init?(jsonData: JSON) {
+        self.addressId = jsonData["address_id"].stringValue
+        self.assetId = jsonData["asset_id"].stringValue
+        self.label = jsonData["label"].stringValue
+        self.publicKey = jsonData["public_key"].stringValue
+        self.accountName = jsonData["account_name"].stringValue
+        self.accountTag = jsonData["account_tag"].stringValue
+    }
+}
