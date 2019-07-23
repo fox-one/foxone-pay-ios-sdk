@@ -455,9 +455,21 @@ public final class PaySDKService {
     /// - Parameter completion: 地址id
     /// - Returns: 返回请求体
     @discardableResult
-    public class func addAddress(assetId: String, label: String, publicKey: String, accountName: String, accountTag: String, completion: @escaping (Result<Address>) -> Void) -> DataRequest {
+    public class func addPublicAddress(assetId: String, label: String, publicKey: String, completion: @escaping (Result<Address>) -> Void) -> DataRequest {
         return NetworkManager.shared
-            .request(api: PaySDKAPI.addAddress(assedId: assetId, label: label, publicKey: publicKey, accountName: accountName, accountTag: accountTag))
+            .request(api: PaySDKAPI.addPublicKeyAddress(assedId: assetId, label: label, publicKey: publicKey))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Address>) in
+                guard let mappedObject = Address(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                
+                return Result.success(mappedObject)
+            })
+    }
+    
+    public class func addAccountAddress(assetId: String, label: String, accountName: String, accountTag: String, completion: @escaping (Result<Address>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.addAccountAddress(assedId: assetId, label: label, accountName: accountName, accountTag: accountTag))
             .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Address>) in
                 guard let mappedObject = Address(jsonData: json) else {
                     return Result.failure(ErrorCode.dataError)

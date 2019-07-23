@@ -29,7 +29,8 @@ enum PaySDKAPI {
     case user
     case walletUser(id: String)
     case getAddresses(assedId: String)
-    case addAddress(assedId: String,label: String, publicKey: String, accountName: String, accountTag: String)
+    case addPublicKeyAddress(assedId: String, label: String, publicKey: String)
+    case addAccountAddress(assedId: String, label: String, accountName: String, accountTag: String)
     case removeAddress(addressId: String)
     
     case withdrawToPublicKey(assetId: String, amount: String, publicKey: String,  memo: String)
@@ -84,7 +85,9 @@ enum PaySDKAPI {
             return "/wallet/user/\(id)"
         case .getAddresses:
             return "/wallet/addresses"
-        case .addAddress:
+        case .addPublicKeyAddress:
+            return "/wallet/address"
+        case .addAccountAddress:
             return "/wallet/address"
         case .removeAddress(let id):
             return "/wallet/address/\(id)"
@@ -93,7 +96,7 @@ enum PaySDKAPI {
 
     var method: HTTPMethod {
         switch self {
-        case .withdrawToPublicKey, .withdrawToAccount, .withdrawToAddressId, .withdrawToWalletId, .hideAsset, .transfer, .validatePin, .showAsset, .addAddress:
+        case .withdrawToPublicKey, .withdrawToAccount, .withdrawToAddressId, .withdrawToWalletId, .hideAsset, .transfer, .validatePin, .showAsset, .addPublicKeyAddress, .addAccountAddress:
             return .post
         case .setPin, .changePin:
             return .put
@@ -126,8 +129,10 @@ enum PaySDKAPI {
             return ["opponent_id": opponentId, "asset_id": assetId, "memo": memo, "amount": amount ,"trace_id": traceId]
         case .getAddresses(let assedId):
             return ["asset_id": assedId]
-        case .addAddress(let assedId ,let label, let publicKey, let accountName, let accountTag):
-            return ["asset_id": assedId, "label": label, "public_key": publicKey, "account_name": accountName, "account_tag": accountTag]
+        case .addPublicKeyAddress(let assedId ,let label, let publicKey):
+            return ["asset_id": assedId, "label": label, "public_key": publicKey]
+        case .addAccountAddress(let assedId ,let label, let accountName, let accountTag):
+            return ["asset_id": assedId, "label": label, "account_name": accountName, "account_tag": accountTag]
         case .withdrawToPublicKey(let assetId, let amount,let  publicKey, let memo):
             return ["public_key": publicKey, "amount": amount, "asset_id": assetId, "memo": memo, "trace_id": UUID().uuidString.lowercased()]
         case .withdrawToAccount(let assetId, let amount, let accountName, let label, let memo):
