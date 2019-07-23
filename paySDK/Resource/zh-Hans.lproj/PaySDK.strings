@@ -19,3 +19,4 @@
 "address_unavaliable" = "你不能给自己转账";
 "pin_err_frequently" = "输入PIN太频繁，请稍候再试";
 "login_err_frequently"    = "请求太频繁，请稍候再试";
+"invalid_address" = "地址无效";

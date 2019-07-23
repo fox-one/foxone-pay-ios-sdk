@@ -16,7 +16,7 @@ enum PaySDKAPI {
     case snapshots(cursor: String, limit: Int)
     case snapshot(id: String, cursor: String, limit: Int)
     case getSnapshot(id: String)
-    case withdraw(assetId: String, address: String, amount: String, memo: String, label: String)
+    
     case fee(assetId: String, address: String, label: String)
     case supportAssets
     case setPin(newPinToken: String, type: Int)
@@ -31,6 +31,12 @@ enum PaySDKAPI {
     case getAddresses(assedId: String)
     case addAddress(assedId: String,label: String, publicKey: String, accountName: String, accountTag: String)
     case removeAddress(addressId: String)
+    
+    case withdrawToPublicKey(assetId: String, amount: String, publicKey: String,  memo: String)
+    case withdrawToAccount(assetId: String, amount: String, accountName: String, accountMemo: String, memo: String)
+    case withdrawToAddressId(assetId: String, amount: String, addressId: String)
+    case withdrawToWalletId(assetId: String, amount: String, walletId: String)
+    
 
     var path: String {
         switch self {
@@ -46,8 +52,14 @@ enum PaySDKAPI {
             return "/wallet/snapshot/\(snapshotId)"
         case .snapshot:
             return "/wallet/snapshots"
-        case .withdraw:
+        case .withdrawToPublicKey:
             return "/wallet/withdraw"
+        case .withdrawToAccount:
+            return "/wallet/withdraw"
+        case .withdrawToAddressId:
+            return "/wallet/withdraw"
+        case .withdrawToWalletId:
+            return "/wallet/transfer"
         case .fee:
             return "/wallet/withdraw/fee"
         case .supportAssets:
@@ -75,16 +87,18 @@ enum PaySDKAPI {
         case .addAddress:
             return "/wallet/address"
         case .removeAddress(let id):
-            return "/wallet/address\(id)"
+            return "/wallet/address/\(id)"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .withdraw, .hideAsset, .transfer, .validatePin, .showAsset, .addAddress, .removeAddress:
+        case .withdrawToPublicKey, .withdrawToAccount, .withdrawToAddressId, .withdrawToWalletId, .hideAsset, .transfer, .validatePin, .showAsset, .addAddress:
             return .post
         case .setPin, .changePin:
             return .put
+        case .removeAddress:
+            return .delete
         default:
             return .get
         }
@@ -96,15 +110,6 @@ enum PaySDKAPI {
             return ["cursor": cursor, "limit": limit]
         case .snapshot(let id, let cursor, let limit):
             return ["asset_id": id, "cursor": cursor, "limit": limit]
-        case .withdraw(let assetId, let address, let amount, let memo, let label):
-            var param: [String: Any] = [:]
-            if !label.isEmpty {
-                param = ["account_name": address, "account_tag":label, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString.lowercased()]
-            } else {
-                param = ["public_key": address, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString.lowercased()]
-            }
-            
-            return param
         case .fee(let id, let address, let label):
             var param: [String: Any] = ["asset_id": id, "public_key": address, "label": label]
             if !label.isEmpty {
@@ -123,6 +128,14 @@ enum PaySDKAPI {
             return ["asset_id": assedId]
         case .addAddress(let assedId ,let label, let publicKey, let accountName, let accountTag):
             return ["asset_id": assedId, "label": label, "public_key": publicKey, "account_name": accountName, "account_tag": accountTag]
+        case .withdrawToPublicKey(let assetId, let amount,let  publicKey, let memo):
+            return ["public_key": publicKey, "amount": amount, "asset_id": assetId, "memo": memo, "trace_id": UUID().uuidString.lowercased()]
+        case .withdrawToAccount(let assetId, let amount, let accountName, let label, let memo):
+            return ["account_name": accountName, "account_tag":label, "amount": amount, "asset_id": assetId, "memo": memo,"trace_id": UUID().uuidString.lowercased()]
+        case .withdrawToAddressId(let assetId,let  amount,let  addressId):
+            return ["address_id": addressId, "amount": amount, "asset_id": assetId, "trace_id": UUID().uuidString.lowercased()]
+        case .withdrawToWalletId(let assetId, let amount,let  walletId):
+            return ["opponent_id": walletId, "asset_id": assetId, "amount": amount ,"trace_id": UUID().uuidString.lowercased()]
         default:
             return nil
         }

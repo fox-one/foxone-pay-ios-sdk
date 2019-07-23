@@ -20,3 +20,4 @@
 "address_unavaliable" = "You can not transfer to yourself";
 "pin_err_frequently" = "Input PIN too frequently. Please try later";
 "login_err_frequently"    = "Request code too frequently. Please try later";
+"invalid_address" = "Invalid address";

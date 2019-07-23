@@ -141,7 +141,34 @@ public final class PaySDKService {
                 })
     }
 
-    /// 转账
+    /// 转账给公钥
+    /// （必须在PaySDK的接口中传入PIN）
+    ///
+    /// - Parameters:
+    ///   - publicKey: 接收地址
+    ///   - amount: 转账数量
+    ///   - assetId: 资产ID
+    ///   - memo: 备注
+    ///   - completion: 结果回调，返回交易记录或者错误
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func withdrawToPublicKey(to publicKey: String,
+                               amount: String,
+                               assetId: String,
+                               memo: String,
+                               completion: @escaping (Result<Snapshot>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+                .request(api: PaySDKAPI.withdrawToPublicKey(assetId: assetId, amount: amount, publicKey: publicKey, memo: memo))
+                .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
+                    guard let mappedObject = Snapshot(jsonData: json) else {
+                        return Result.failure(ErrorCode.dataError)
+                    }
+
+                    return Result.success(mappedObject)
+                })
+    }
+    
+    /// 转账给账户
     /// （必须在PaySDK的接口中传入PIN）
     ///
     /// - Parameters:
@@ -153,21 +180,74 @@ public final class PaySDKService {
     ///   - completion: 结果回调，返回交易记录或者错误
     /// - Returns: 返回请求体
     @discardableResult
-    public class func withdraw(to address: String,
+    public class func withdrawToAccount(to accontName: String, accountMemo: String,
                                amount: String,
                                assetId: String,
                                memo: String,
-                               label: String,
                                completion: @escaping (Result<Snapshot>) -> Void) -> DataRequest {
         return NetworkManager.shared
-                .request(api: PaySDKAPI.withdraw(assetId: assetId, address: address, amount: amount, memo: memo, label: label))
-                .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
-                    guard let mappedObject = Snapshot(jsonData: json) else {
-                        return Result.failure(ErrorCode.dataError)
-                    }
-
-                    return Result.success(mappedObject)
-                })
+            .request(api: PaySDKAPI.withdrawToAccount(assetId: assetId, amount: amount, accountName: accontName, accountMemo: accountMemo, memo: memo))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
+                guard let mappedObject = Snapshot(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                
+                return Result.success(mappedObject)
+            })
+    }
+    
+    /// 转账给地址id
+    /// （必须在PaySDK的接口中传入PIN）
+    ///
+    /// - Parameters:
+    ///   - address: 接收地址
+    ///   - amount: 转账数量
+    ///   - assetId: 资产ID
+    ///   - memo: 备注
+    ///   - label: 标签用于EOS
+    ///   - completion: 结果回调，返回交易记录或者错误
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func withdrawToAddress(to addressId: String,
+                               amount: String,
+                               assetId: String,
+                               completion: @escaping (Result<Snapshot>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.withdrawToAddressId(assetId: assetId, amount: amount, addressId: addressId))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
+                guard let mappedObject = Snapshot(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                
+                return Result.success(mappedObject)
+            })
+    }
+    
+    /// 转账给WalletID
+    /// （必须在PaySDK的接口中传入PIN）
+    ///
+    /// - Parameters:
+    ///   - address: 接收地址
+    ///   - amount: 转账数量
+    ///   - assetId: 资产ID
+    ///   - memo: 备注
+    ///   - label: 标签用于EOS
+    ///   - completion: 结果回调，返回交易记录或者错误
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func withdrawToWallet(to walletId: String,
+                               amount: String,
+                               assetId: String,
+                               completion: @escaping (Result<Snapshot>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.withdrawToWalletId(assetId: assetId, amount: amount, walletId: walletId))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot>) in
+                guard let mappedObject = Snapshot(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                
+                return Result.success(mappedObject)
+            })
     }
 
 
