@@ -26,6 +26,7 @@ extension WalletAsset: PaySDKMappable {
         priceBTC = jsonData["price_btc"].doubleValue
         priceUSD = jsonData["price_usd"].doubleValue
         changeCNYPercentage = jsonData["change"].doubleValue
+        confirmations = jsonData["confirmations"].intValue
 
     }
 }

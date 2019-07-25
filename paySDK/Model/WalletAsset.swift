@@ -20,5 +20,6 @@ public struct WalletAsset: Codable {
     public let changeUSDPercentage: Double
     public let changeBTCPercentage: Double
     public let changeCNYPercentage: Double
+    public let confirmations: Int
 
 }

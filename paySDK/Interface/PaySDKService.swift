@@ -491,6 +491,23 @@ public final class PaySDKService {
                 return Result.success(())
             })
     }
+    
+    /// 搜索资产类型
+    ///
+    /// - Parameter completion: 资产类型
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func search(symbol: String, completion: @escaping (Result<[WalletAsset]>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.searchAsset(text: symbol))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<[WalletAsset]>) in
+                guard let mappedObject = Lists<WalletAsset>(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                
+                return Result.success(mappedObject.items)
+            })
+    }
 }
 
 extension DataRequest {
