@@ -467,6 +467,7 @@ public final class PaySDKService {
             })
     }
     
+    @discardableResult
     public class func addAccountAddress(assetId: String, label: String, accountName: String, accountTag: String, completion: @escaping (Result<Address>) -> Void) -> DataRequest {
         return NetworkManager.shared
             .request(api: PaySDKAPI.addAccountAddress(assedId: assetId, label: label, accountName: accountName, accountTag: accountTag))
