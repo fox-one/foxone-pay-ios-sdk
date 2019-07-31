@@ -13,6 +13,7 @@
 		7E6213182181C2CF0034EAF4 /* PaySDKEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6213172181C2CF0034EAF4 /* PaySDKEnviroment.swift */; };
 		7E62131A2181C3110034EAF4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6213192181C3110034EAF4 /* Currency.swift */; };
 		7E62131C2181C31C0034EAF4 /* CurrencyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62131B2181C31C0034EAF4 /* CurrencyInfo.swift */; };
+		7EE60B9322F15457004E3B82 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE60B9222F15457004E3B82 /* Address.swift */; };
 		9130CB3D00FAD4024A6B83E3 /* Pods_SDKOCDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0E76BBEB816132A37F5B7D /* Pods_SDKOCDemo.framework */; };
 		C2146744216E037200CECBE1 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146738216E037200CECBE1 /* Option.swift */; };
 		C2146745216E037200CECBE1 /* WalletAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2146739216E037200CECBE1 /* WalletAsset.swift */; };
@@ -57,6 +58,7 @@
 		7E6213172181C2CF0034EAF4 /* PaySDKEnviroment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaySDKEnviroment.swift; sourceTree = "<group>"; };
 		7E6213192181C3110034EAF4 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7E62131B2181C31C0034EAF4 /* CurrencyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyInfo.swift; sourceTree = "<group>"; };
+		7EE60B9222F15457004E3B82 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		94E2374DB02F18C32FD27BB8 /* Pods-SDKOCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKOCDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKOCDemo/Pods-SDKOCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A6ABC6117D7179E647AF870A /* Pods-SDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKDemo/Pods-SDKDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B1FFC9360AFDD2B78948A7B1 /* Pods-SDKOCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKOCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKOCDemo/Pods-SDKOCDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				7E62131B2181C31C0034EAF4 /* CurrencyInfo.swift */,
 				7E6213192181C3110034EAF4 /* Currency.swift */,
 				C214673B216E037200CECBE1 /* Fee.swift */,
+				7EE60B9222F15457004E3B82 /* Address.swift */,
 				C214673A216E037200CECBE1 /* Opponent.swift */,
 				C2146738216E037200CECBE1 /* Option.swift */,
 				C2146740216E037200CECBE1 /* Snapshot.swift */,
@@ -588,6 +591,7 @@
 				7E15978C2295384400ABD28B /* WithDrawFee.swift in Sources */,
 				C2146744216E037200CECBE1 /* Option.swift in Sources */,
 				C234F47D21B6AE7900A188BD /* PaySDKError.swift in Sources */,
+				7EE60B9322F15457004E3B82 /* Address.swift in Sources */,
 				C2146745216E037200CECBE1 /* WalletAsset.swift in Sources */,
 				C2146748216E037200CECBE1 /* CNYTicker.swift in Sources */,
 				C234F47F21B6AEA000A188BD /* PaySDKService.swift in Sources */,
