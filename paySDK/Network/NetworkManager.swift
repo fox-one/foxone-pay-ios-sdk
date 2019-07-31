@@ -25,8 +25,8 @@ final class NetworkManager {
         do {
             originalRequest = try URLRequest(url: api.url, method: api.method, headers: api.headers)
             var encodedURLRequest = try api.parameterEncoding.encode(originalRequest!, with: api.parameters)
-            if (api.body != nil) {
-                let data = try JSONSerialization.data(withJSONObject: api.body, options: options)
+            if let body = api.body {
+                let data = try JSONSerialization.data(withJSONObject: body, options: options)
 
                 if encodedURLRequest.value(forHTTPHeaderField: "Content-Type") == nil {
                     encodedURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -59,7 +59,6 @@ final class NetworkManager {
             return self.request(api: api)
         }
 
-        return self.request(api: api)
     }
 
 }
