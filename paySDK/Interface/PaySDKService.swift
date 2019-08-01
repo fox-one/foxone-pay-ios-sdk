@@ -498,11 +498,11 @@ public final class PaySDKService {
     /// - Parameter completion: 资产类型
     /// - Returns: 返回请求体
     @discardableResult
-    public class func search(symbol: String, completion: @escaping (Result<[WalletAsset]>) -> Void) -> DataRequest {
+    public class func search(symbol: String, completion: @escaping (Result<[Asset]>) -> Void) -> DataRequest {
         return NetworkManager.shared
             .request(api: PaySDKAPI.searchAsset(text: symbol))
-            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<[WalletAsset]>) in
-                guard let mappedObject = Lists<WalletAsset>(jsonData: json) else {
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<[Asset]>) in
+                guard let mappedObject = Lists<Asset>(jsonData: json) else {
                     return Result.failure(ErrorCode.dataError)
                 }
                 
