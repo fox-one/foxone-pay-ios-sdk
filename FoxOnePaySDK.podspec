@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FoxOnePaySDK"
-  s.version      = "3.1.0"
+  s.version      = "3.2.0"
   s.summary      = "FoxOne Pay SDK"
 
   s.description  = "FoxOne Pay SDK for iOS"

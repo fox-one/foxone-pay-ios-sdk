@@ -36,6 +36,7 @@
 		C234F47D21B6AE7900A188BD /* PaySDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234F47C21B6AE7900A188BD /* PaySDKError.swift */; };
 		C234F47F21B6AEA000A188BD /* PaySDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234F47E21B6AEA000A188BD /* PaySDKService.swift */; };
 		C23E76E3219D10C9007931FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23E76E2219D10C9007931FF /* User.swift */; };
+		C2A8FFEE2313C7B5003572E4 /* PendingDeposit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A8FFED2313C7B5003572E4 /* PendingDeposit.swift */; };
 		C2B35AB92138227B0072B077 /* paysdk.h in Headers */ = {isa = PBXBuildFile; fileRef = C2B35AAB2138227B0072B077 /* paysdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C2CDBA56213CD1D9006A5355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CDBA55213CD1D9006A5355 /* AppDelegate.swift */; };
 		C2CDBA58213CD1D9006A5355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CDBA57213CD1D9006A5355 /* ViewController.swift */; };
@@ -91,6 +92,7 @@
 		C234F47C21B6AE7900A188BD /* PaySDKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaySDKError.swift; sourceTree = "<group>"; };
 		C234F47E21B6AEA000A188BD /* PaySDKService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaySDKService.swift; sourceTree = "<group>"; };
 		C23E76E2219D10C9007931FF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C2A8FFED2313C7B5003572E4 /* PendingDeposit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PendingDeposit.swift; path = paySDK/Model/PendingDeposit.swift; sourceTree = SOURCE_ROOT; };
 		C2B35AA82138227B0072B077 /* FoxOnePaySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FoxOnePaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B35AAB2138227B0072B077 /* paysdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paysdk.h; sourceTree = "<group>"; };
 		C2B35AAC2138227B0072B077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		C234F47A21B6A7C500A188BD /* Lists */ = {
 			isa = PBXGroup;
 			children = (
+				C2A8FFED2313C7B5003572E4 /* PendingDeposit.swift */,
 				C2146741216E037200CECBE1 /* PageInfo.swift */,
 				C214673F216E037200CECBE1 /* Lists.swift */,
 			);
@@ -602,6 +605,7 @@
 				7E62131A2181C3110034EAF4 /* Currency.swift in Sources */,
 				C214674A216E037200CECBE1 /* Asset.swift in Sources */,
 				C214674C216E037200CECBE1 /* Snapshot.swift in Sources */,
+				C2A8FFEE2313C7B5003572E4 /* PendingDeposit.swift in Sources */,
 				C2146746216E037200CECBE1 /* Opponent.swift in Sources */,
 				C2F36859213FC886001CFD49 /* NetworkManager.swift in Sources */,
 				C2F3684B213FC886001CFD49 /* PaySDKAPI.swift in Sources */,
