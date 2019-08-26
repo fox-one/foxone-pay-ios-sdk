@@ -509,6 +509,40 @@ public final class PaySDKService {
                 return Result.success(mappedObject.items)
             })
     }
+    
+    
+    /// 获取正在转入的快照
+    ///
+    /// - Parameter completion: 结果回调，返回正在转入的快照列表或者错误
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func getPendingDeposits(assetId: String, completion: @escaping (Result<[PendingDeposit]>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.pendingDeposit(asseId: assetId))
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<[PendingDeposit]>) in
+                guard let mappedObject = Lists<PendingDeposit>(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                return Result.success(mappedObject.items)
+            })
+    }
+    
+    /// 获取正在转入的所有快照
+    ///
+    /// - Parameter completion: 结果回调，返回正在转入的快照列表或者错误
+    /// - Returns: 返回请求体
+    @discardableResult
+    public class func getAllPendingDeposits(completion: @escaping (Result<[PendingDeposit]>) -> Void) -> DataRequest {
+        return NetworkManager.shared
+            .request(api: PaySDKAPI.pendingDeposits)
+            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<[PendingDeposit]>) in
+                guard let mappedObject = Lists<PendingDeposit>(jsonData: json) else {
+                    return Result.failure(ErrorCode.dataError)
+                }
+                return Result.success(mappedObject.items)
+            })
+    }
+    
 }
 
 extension DataRequest {

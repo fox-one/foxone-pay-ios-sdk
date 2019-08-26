@@ -38,8 +38,10 @@ enum PaySDKAPI {
     case withdrawToAddressId(assetId: String, amount: String, addressId: String)
     case withdrawToWalletId(assetId: String, amount: String, walletId: String)
     case searchAsset(text: String)
+    case pendingDeposits
+    case pendingDeposit(asseId: String)
+    case pendingChainDeposit(chainId: String)
     
-
     var path: String {
         switch self {
         case .config:
@@ -94,6 +96,12 @@ enum PaySDKAPI {
             return "/wallet/address/\(id)"
         case .searchAsset:
             return "/wallet/search-assets"
+        case .pendingDeposit:
+            return "/wallet/pending-deposits"
+        case .pendingChainDeposit:
+            return "/wallet/pending-deposits"
+        case .pendingDeposits:
+            return "/wallet/pending-deposits"
         }
     }
 
@@ -146,6 +154,10 @@ enum PaySDKAPI {
             return ["opponent_id": walletId, "asset_id": assetId, "amount": amount ,"trace_id": UUID().uuidString.lowercased()]
         case .searchAsset(let text):
             return ["symbol": text, "mode": "fuzzy"]
+        case .pendingDeposit(let assetId):
+            return ["asset_id": assetId]
+        case .pendingChainDeposit(let chainId):
+            return ["chain_id": chainId]
         default:
             return nil
         }

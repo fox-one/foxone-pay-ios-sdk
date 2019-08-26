@@ -32,8 +32,11 @@ extension WalletAsset: PaySDKMappable {
 }
 
 extension Snapshot: PaySDKMappable {
-
     public init?(jsonData: JSON) {
+        if jsonData.isEmpty {
+            return nil
+        }
+        
         amount = jsonData["amount"].doubleValue
         assetId = jsonData["asset_id"].stringValue
         createAt = jsonData["create_at"].doubleValue
@@ -152,5 +155,23 @@ extension Address: PaySDKMappable {
         self.publicKey = jsonData["public_key"].stringValue
         self.accountName = jsonData["account_name"].stringValue
         self.accountTag = jsonData["account_tag"].stringValue
+    }
+}
+
+extension PendingDeposit: PaySDKMappable {
+    init?(jsonData: JSON) {
+        if jsonData.isEmpty {
+            return nil
+        }
+        self.amount = jsonData["amount"].doubleValue
+        self.assetId =  jsonData["asset_id"].stringValue
+        self.chainId = jsonData["chain_id"].stringValue
+        self.confirmations = jsonData["confirmations"].intValue
+        self.createdAt = jsonData["created_at"].doubleValue
+        self.publicKey = jsonData["public_key"].stringValue
+        self.threshold = jsonData["threshold"].intValue
+        self.transactionHash = jsonData["transaction_hash"].stringValue
+        self.transactionId = jsonData["transaction_id"].stringValue
+        self.type = jsonData["type"].stringValue
     }
 }
