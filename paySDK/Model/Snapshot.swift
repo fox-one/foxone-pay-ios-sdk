@@ -8,46 +8,6 @@
 
 import Foundation
 
-/// 交易记录类型
-///
-/// - deposit_confirmed: 充值
-/// - transfer_initialized: 转账
-/// - withdrawal_initialized: 提现
-/// - withdrawal_fee_charged: 提现手续费
-/// - withdrawal_failed: 提现失败
-
-/// - o1_open_account: Ocean.ONE 账户开通
-/// - o1_put_order: Ocean.ONE 下单
-/// - o1_cancel_order: Ocean.ONE 撤单
-/// - o1_order_refund: Ocean.ONE 订单退回
-/// - o1_order_canceled: Ocean.ONE 订单取消
-/// - o1_order_matched: Ocean.ONE 订单成交
-
-public enum SnapshotType: String {
-    case deposit_confirmed = "DEPOSIT_CONFIRMED"
-    case transfer_initialized = "TRANSFER_INITIALIZED"
-    case withdrawal_initialized = "WITHDRAWAL_INITIALIZED"
-    case withdrawal_fee_charged = "WITHDRAWAL_FEE_CHARGED"
-    case withdrawal_failed = "WITHDRAWAL_FAILED"
-    case o1_open_account = "O1_OPEN_ACCOUNT"
-    case o1_put_order = "O1_PUT_ORDER"
-    case o1_cancel_order = "O1_CANCEL_ORDER"
-    case o1_order_refund = "O1_ORDER_REFUND"
-    case o1_order_canceled = "O1_ORDER_CANCELED"
-    case o1_order_matched = "O1_ORDER_MATCHED"
-    case fox_redpacket_pay = "FOX_REDPACKET_PAY"
-    case fox_redpacket_reward = "FOX_REDPACKET_REWARD"
-    case fox_redpacket_refund = "FOX_REDPACKET_REFUND"
-    case f1ex_put_order = "F1EX_PUT_ORDER"
-    case f1ex_order_refund = "F1EX_ORDER_REFUND"
-    case f1ex_order_canceled = "F1EX_ORDER_CANCELED"
-    case f1ex_order_matched = "F1EX_ORDER_MATCHED"
-    case efox_put_order = "EFOX_PUT_ORDER"
-    case efox_order_refund = "EFOX_ORDER_REFUND"
-    case efox_order_filled = "EFOX_ORDER_FILLED"
-    
-}
-
 /// 交易记录
 public struct Snapshot: Codable {
 
