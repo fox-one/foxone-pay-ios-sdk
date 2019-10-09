@@ -15,7 +15,7 @@ public struct Snapshot: Codable {
     public let assetId: String
 
     /// 金额
-    public let amount: Double
+    public let amount: String
 
     /// 创建时间
     public let createAt: TimeInterval

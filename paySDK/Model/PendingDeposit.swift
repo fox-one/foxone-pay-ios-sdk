@@ -8,7 +8,7 @@
 import Foundation
 
 public struct PendingDeposit: Codable {
-    public let amount: Double
+    public let amount: String
     public let assetId: String
     public let chainId: String
     public let confirmations: Int

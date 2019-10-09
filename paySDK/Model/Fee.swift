@@ -15,5 +15,5 @@ public struct Fee: Codable {
     // 资产 ID
     public let assetId: String
     // 金额
-    public let amount: Double
+    public let amount: String
 }

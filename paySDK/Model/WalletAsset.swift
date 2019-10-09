@@ -14,12 +14,12 @@ public struct WalletAsset: Codable {
     public let symbol: String
     public let chainId: String
     public let icon: String
-    public let price: Double
-    public let priceUSD: Double
-    public let priceBTC: Double
-    public let changeUSDPercentage: Double
-    public let changeBTCPercentage: Double
-    public let changeCNYPercentage: Double
+    public let price: String
+    public let priceUSD: String
+    public let priceBTC: String
+    public let changeUSDPercentage: String
+    public let changeBTCPercentage: String
+    public let changeCNYPercentage: String
     public let confirmations: Int
 
 }

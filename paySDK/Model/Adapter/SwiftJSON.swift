@@ -20,12 +20,12 @@ extension WalletAsset: PaySDKMappable {
         symbol = jsonData["symbol"].stringValue
         icon = jsonData["icon"].stringValue
         chainId = jsonData["chain_id"].stringValue
-        price = jsonData["price"].doubleValue
-        changeBTCPercentage = jsonData["change_btc"].doubleValue
-        changeUSDPercentage = jsonData["change_usd"].doubleValue
-        priceBTC = jsonData["price_btc"].doubleValue
-        priceUSD = jsonData["price_usd"].doubleValue
-        changeCNYPercentage = jsonData["change"].doubleValue
+        price = jsonData["price"].stringValue
+        changeBTCPercentage = jsonData["change_btc"].stringValue
+        changeUSDPercentage = jsonData["change_usd"].stringValue
+        priceBTC = jsonData["price_btc"].stringValue
+        priceUSD = jsonData["price_usd"].stringValue
+        changeCNYPercentage = jsonData["change"].stringValue
         confirmations = jsonData["confirmations"].intValue
 
     }
@@ -37,7 +37,7 @@ extension Snapshot: PaySDKMappable {
             return nil
         }
         
-        amount = jsonData["amount"].doubleValue
+        amount = jsonData["amount"].stringValue
         assetId = jsonData["asset_id"].stringValue
         createAt = jsonData["create_at"].doubleValue
         memo = jsonData["memo"].stringValue
@@ -57,7 +57,7 @@ extension Snapshot: PaySDKMappable {
 
 extension Fee: PaySDKMappable {
     init?(jsonData: JSON) {
-        amount = jsonData["amount"].doubleValue
+        amount = jsonData["amount"].stringValue
         assetId = jsonData["asset_id"].stringValue
         assetSymbol = jsonData["asset_symbol"].stringValue
     }
@@ -66,7 +66,7 @@ extension Fee: PaySDKMappable {
 extension WithDrawFee: PaySDKMappable {
     init?(jsonData: JSON) {
         feeAsset = Asset(jsonData: jsonData["fee_asset"])
-        feeAmount = jsonData["fee_amount"].doubleValue
+        feeAmount = jsonData["fee_amount"].stringValue
         fee = Fee(jsonData: jsonData["fee"])
     }
 }
@@ -74,16 +74,16 @@ extension WithDrawFee: PaySDKMappable {
 extension Asset: PaySDKMappable {
     init?(jsonData: JSON) {
         assetId = jsonData["asset_id"].stringValue
-        balance = jsonData["balance"].doubleValue
+        balance = jsonData["balance"].stringValue
         chainId = jsonData["chain_id"].stringValue
-        changeBTCPercentage = jsonData["change_btc"].doubleValue
-        changeUSDPercentage = jsonData["change_usd"].doubleValue
-        changeCNYPercentage = jsonData["change"].doubleValue
+        changeBTCPercentage = jsonData["change_btc"].stringValue
+        changeUSDPercentage = jsonData["change_usd"].stringValue
+        changeCNYPercentage = jsonData["change"].stringValue
         icon = jsonData["icon"].stringValue
         name = jsonData["name"].stringValue
-        price = jsonData["price"].doubleValue
-        priceBTC = jsonData["price_btc"].doubleValue
-        priceUSD = jsonData["price_usd"].doubleValue
+        price = jsonData["price"].stringValue
+        priceBTC = jsonData["price_btc"].stringValue
+        priceUSD = jsonData["price_usd"].stringValue
         publicKey = jsonData["public_key"].stringValue
         symbol = jsonData["symbol"].stringValue
         accountName = jsonData["account_name"].stringValue
@@ -163,7 +163,7 @@ extension PendingDeposit: PaySDKMappable {
         if jsonData.isEmpty {
             return nil
         }
-        self.amount = jsonData["amount"].doubleValue
+        self.amount = jsonData["amount"].stringValue
         self.assetId =  jsonData["asset_id"].stringValue
         self.chainId = jsonData["chain_id"].stringValue
         self.confirmations = jsonData["confirmations"].intValue
