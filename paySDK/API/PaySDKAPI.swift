@@ -183,7 +183,7 @@ enum PaySDKAPI {
         }
     }
 
-    var headers: [String: String]? {
+    var headers: HTTPHeaders? {
         switch self {
         case .changePin(let pinToken, _, _):
             return [foxCustomPinHeader: pinToken]

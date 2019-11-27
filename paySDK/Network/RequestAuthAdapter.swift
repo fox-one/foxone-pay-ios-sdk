@@ -12,8 +12,8 @@ import Alamofire
 let foxCustomPinHeader: String = "fox-client-pin"
 let foxCustomKeyHeader: String = "fox-client-key"
 
-class RequestAuthAdapter: RequestAdapter {
-    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+class RequestAuthAdapter: RequestInterceptor {
+    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
         if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(PaySDK.shared.baseURL) {
             if let accessToken = PaySDK.shared.delegate?.f1AccessToken() {
@@ -42,6 +42,11 @@ class RequestAuthAdapter: RequestAdapter {
             }
         }
 
-        return urlRequest
+        completion(Result.success(urlRequest))
+        
     }
+    
+//    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+//
+//    }
 }

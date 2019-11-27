@@ -12,10 +12,9 @@ import SwiftyJSON
 
 final class NetworkManager {
     static let shared = NetworkManager()
-    private let sessionManager = SessionManager()
+    private let sessionManager = Session(interceptor: RequestAuthAdapter())
 
     init() {
-        sessionManager.adapter = RequestAuthAdapter()
     }
 
     func request(api: PaySDKAPI) -> DataRequest {
@@ -43,7 +42,7 @@ final class NetworkManager {
                         }
 
                         if acceptableStatusCodes.contains(response.statusCode) {
-                            return .success
+                            return .success(())
                         } else {
                             guard let data = data else {
                                 return .failure(ErrorCode.dataError)
