@@ -560,7 +560,7 @@ extension DataRequest {
                 }
 
             case .failure(let error):
-                completion(Result.failure(error as! PaySDKError))
+                completion(Result.failure(ErrorCode.netWorkError))
             }
         }
     }

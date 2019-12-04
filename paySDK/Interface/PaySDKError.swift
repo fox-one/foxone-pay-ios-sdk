@@ -25,8 +25,10 @@ public struct ErrorCode {
         1552: "pin_err_frequently".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1553: "pin_not_set_message".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1554: "incorrect_pin_message".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
+        1161: "insufficient_balance".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1163: "invalid_address".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         1601: "invalid_public_key".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
+        
         2005: "invalid_amount".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         2006: "amount_too_small".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
         -1: "address_unavaliable".localizedIn(table: "PaySDK", bundle: ErrorCode.bundle),
@@ -38,6 +40,7 @@ public struct ErrorCode {
     }
 
     static var dataError = PaySDKError.error(code: -2, message: "")
+    static var netWorkError = PaySDKError.error(code: -1, message: "")
 }
 
 //LocalizedString
