@@ -30,7 +30,7 @@ enum PaySDKAPI {
     case walletUser(id: String)
     case getAddresses(assedId: String)
     case addPublicKeyAddress(assedId: String, label: String, publicKey: String)
-    case addAccountAddress(assedId: String, label: String, accountName: String, accountTag: String)
+    case addAccountAddress(assedId: String, label: String, destination: String, tag: String)
     case removeAddress(addressId: String)
     
     case withdrawToPublicKey(assetId: String, amount: String, publicKey: String,  memo: String)
@@ -142,8 +142,8 @@ enum PaySDKAPI {
             return ["asset_id": assedId]
         case .addPublicKeyAddress(let assedId ,let label, let publicKey):
             return ["asset_id": assedId, "label": label, "public_key": publicKey]
-        case .addAccountAddress(let assedId ,let label, let accountName, let accountTag):
-            return ["asset_id": assedId, "label": label, "account_name": accountName, "account_tag": accountTag]
+        case .addAccountAddress(let assedId ,let label, let destination, let tag):
+            return ["asset_id": assedId, "label": label, "destination": destination, "tag": tag]
         case .withdrawToPublicKey(let assetId, let amount,let  publicKey, let memo):
             return ["public_key": publicKey, "amount": amount, "asset_id": assetId, "memo": memo, "trace_id": UUID().uuidString.lowercased()]
         case .withdrawToAccount(let assetId, let amount, let accountName, let label, let memo):

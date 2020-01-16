@@ -468,9 +468,9 @@ public final class PaySDKService {
     }
     
     @discardableResult
-    public class func addAccountAddress(assetId: String, label: String, accountName: String, accountTag: String, completion: @escaping (Result<Address, PaySDKError>) -> Void) -> DataRequest {
+    public class func addAccountAddress(assetId: String, label: String, destination: String, tag: String, completion: @escaping (Result<Address, PaySDKError>) -> Void) -> DataRequest {
         return NetworkManager.shared
-            .request(api: PaySDKAPI.addAccountAddress(assedId: assetId, label: label, accountName: accountName, accountTag: accountTag))
+            .request(api: PaySDKAPI.addAccountAddress(assedId: assetId, label: label, destination: destination, tag: tag))
             .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Address, PaySDKError>) in
                 guard let mappedObject = Address(jsonData: json) else {
                     return Result.failure(ErrorCode.dataError)
