@@ -1,11 +1,3 @@
-//
-//  SwiftJSON.swift
-//  FoxOne
-//
-//  Created by moubuns on 2018/8/30.
-//  Copyright © 2018 FoxOne. All rights reserved.
-//
-
 import Foundation
 import SwiftyJSON
 

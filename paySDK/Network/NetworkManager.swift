@@ -1,11 +1,3 @@
-//
-//  Network.swift
-//  FoxOne
-//
-//  Created by moubuns on 2018/8/31.
-//  Copyright © 2018 FoxOne. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import SwiftyJSON

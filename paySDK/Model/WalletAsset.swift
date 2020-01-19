@@ -1,11 +1,3 @@
-//
-//  WalletCoin.swift
-//  FoxOne
-//
-//  Created by moubuns on 2018/8/25.
-//  Copyright © 2018 FoxOne. All rights reserved.
-//
-
 import Foundation
 
 public struct WalletAsset: Codable {

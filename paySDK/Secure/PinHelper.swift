@@ -1,11 +1,3 @@
-//
-//  PinHelper.swift
-//  FoxOne
-//
-//  Created by moubuns on 2018/9/5.
-//  Copyright © 2018 FoxOne. All rights reserved.
-//
-
 import Foundation
 
 public class PinHelper {

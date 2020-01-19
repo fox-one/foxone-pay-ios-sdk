@@ -1,11 +1,3 @@
-//
-//  SecureData.swift
-//  FoxOne
-//
-//  Created by moubuns on 8/1/18.
-//  Copyright © 2018 FoxOne. All rights reserved.
-//
-
 import UIKit
 import SwiftyRSA
 import CryptoSwift

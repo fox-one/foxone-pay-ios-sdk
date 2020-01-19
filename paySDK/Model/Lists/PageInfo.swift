@@ -1,11 +1,3 @@
-//
-//  PagInation.swift
-//  FoxOne
-//
-//  Created by 杜一平 on 2018/9/22.
-//  Copyright © 2018 FoxOne. All rights reserved.
-//
-
 import UIKit
 import SwiftyJSON
 

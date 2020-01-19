@@ -1,11 +1,3 @@
-//
-//  PaySDKError.swift
-//  FoxOne
-//
-//  Created by moubuns on 2018/7/11.
-//  Copyright © 2018 FoxOne. All rights reserved.
-//
-
 import Foundation
 
 public enum PaySDKError: Swift.Error {
