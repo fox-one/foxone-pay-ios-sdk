@@ -76,10 +76,9 @@ extension Asset: PaySDKMappable {
         price = jsonData["price"].stringValue
         priceBTC = jsonData["price_btc"].stringValue
         priceUSD = jsonData["price_usd"].stringValue
-        publicKey = jsonData["public_key"].stringValue
+        destination = jsonData["destination"].stringValue
         symbol = jsonData["symbol"].stringValue
-        accountName = jsonData["account_name"].stringValue
-        accountTag = jsonData["account_tag"].stringValue
+        tag = jsonData["tag"].stringValue
         chain = WalletAsset(jsonData: jsonData["chain"])
         option = Option(jsonData: jsonData["option"]) ?? Option(hide: false)
     }

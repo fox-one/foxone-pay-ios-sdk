@@ -18,8 +18,6 @@ public struct Asset: Codable {
     public let priceBTC: String
     // 当前价格 usd计价
     public let priceUSD: String
-    // 公钥
-    public let publicKey: String
     // 符号
     public let symbol: String
     // 价格变化，CNY计价
@@ -28,12 +26,14 @@ public struct Asset: Codable {
     public let changeBTCPercentage: String
     // 价格变化，USD计价
     public let changeUSDPercentage: String
-    // EOS 账户名称
-    public let accountName: String
-    // EOS 账户标识
-    public let accountTag: String
+
     // 主链
     public let chain: WalletAsset?
     // 显示选项
     public let option: Option
+    
+    // Destination
+    public let destination: String
+    // Tag
+    public let tag: String
 }

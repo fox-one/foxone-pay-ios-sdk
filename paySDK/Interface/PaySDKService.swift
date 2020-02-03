@@ -137,20 +137,20 @@ public final class PaySDKService {
     /// （必须在PaySDK的接口中传入PIN）
     ///
     /// - Parameters:
-    ///   - publicKey: 接收地址
+    ///   - destination: 接收地址
     ///   - amount: 转账数量
     ///   - assetId: 资产ID
     ///   - memo: 备注
     ///   - completion: 结果回调，返回交易记录或者错误
     /// - Returns: 返回请求体
     @discardableResult
-    public class func withdrawToPublicKey(to publicKey: String,
+    public class func withdrawToPublicKey(to destination: String,
                                amount: String,
                                assetId: String,
                                memo: String,
                                completion: @escaping (Result<Snapshot, PaySDKError>) -> Void) -> DataRequest {
         return NetworkManager.shared
-                .request(api: PaySDKAPI.withdrawToPublicKey(assetId: assetId, amount: amount, publicKey: publicKey, memo: memo))
+                .request(api: PaySDKAPI.withdrawToPublicKey(assetId: assetId, amount: amount, destination: destination, memo: memo))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot, PaySDKError>) in
                     guard let mappedObject = Snapshot(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
@@ -164,21 +164,21 @@ public final class PaySDKService {
     /// （必须在PaySDK的接口中传入PIN）
     ///
     /// - Parameters:
-    ///   - address: 接收地址
+    ///   - destination: 接收地址
     ///   - amount: 转账数量
     ///   - assetId: 资产ID
     ///   - memo: 备注
-    ///   - label: 标签用于EOS
+    ///   - tag: 标签
     ///   - completion: 结果回调，返回交易记录或者错误
     /// - Returns: 返回请求体
     @discardableResult
-    public class func withdrawToAccount(to accontName: String, accountMemo: String,
+    public class func withdrawToAccount(to destination: String, tag: String,
                                amount: String,
                                assetId: String,
                                memo: String,
                                completion: @escaping (Result<Snapshot, PaySDKError>) -> Void) -> DataRequest {
         return NetworkManager.shared
-            .request(api: PaySDKAPI.withdrawToAccount(assetId: assetId, amount: amount, accountName: accontName, accountMemo: accountMemo, memo: memo))
+            .request(api: PaySDKAPI.withdrawToAccount(assetId: assetId, amount: amount, destination: destination, tag: tag, memo: memo))
             .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot, PaySDKError>) in
                 guard let mappedObject = Snapshot(jsonData: json) else {
                     return Result.failure(ErrorCode.dataError)
@@ -277,14 +277,14 @@ public final class PaySDKService {
     ///
     /// - Parameters:
     ///   - id: 资产ID
-    ///   - address: 接收地址
-    ///   - label: 标签用于EOS
+    ///   - destination: 接收地址
+    ///   - tag: 标签用于EOS
     ///   - completion: 结果回调，返回手续费或者错误
     /// - Returns: 返回请求体
     @discardableResult
-    public class func getFee(by id: String, address: String, label: String, completion: @escaping (Result<WithDrawFee, PaySDKError>) -> Void) -> DataRequest {
+    public class func getFee(by id: String, destination: String, tag: String, completion: @escaping (Result<WithDrawFee, PaySDKError>) -> Void) -> DataRequest {
         return NetworkManager.shared
-                .request(api: PaySDKAPI.fee(assetId: id, address: address, label: label))
+                .request(api: PaySDKAPI.fee(assetId: id, destination: destination, tag: tag))
                 .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<WithDrawFee, PaySDKError>) in
                     guard let mappedObject = WithDrawFee(jsonData: json) else {
                         return Result.failure(ErrorCode.dataError)
@@ -439,23 +439,6 @@ public final class PaySDKService {
                 }
                 
                 return Result.success(mappedObject.items)
-            })
-    }
-    
-    /// 修改地址
-    ///
-    /// - Parameter completion: 地址id
-    /// - Returns: 返回请求体
-    @discardableResult
-    public class func addPublicAddress(assetId: String, label: String, publicKey: String, completion: @escaping (Result<Address, PaySDKError>) -> Void) -> DataRequest {
-        return NetworkManager.shared
-            .request(api: PaySDKAPI.addPublicKeyAddress(assedId: assetId, label: label, publicKey: publicKey))
-            .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Address, PaySDKError>) in
-                guard let mappedObject = Address(jsonData: json) else {
-                    return Result.failure(ErrorCode.dataError)
-                }
-                
-                return Result.success(mappedObject)
             })
     }
     
