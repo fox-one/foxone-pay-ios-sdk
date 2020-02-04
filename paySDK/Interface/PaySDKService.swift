@@ -132,33 +132,6 @@ public final class PaySDKService {
                     return Result.success(mappedObject.items)
                 })
     }
-
-    /// 转账给公钥
-    /// （必须在PaySDK的接口中传入PIN）
-    ///
-    /// - Parameters:
-    ///   - destination: 接收地址
-    ///   - amount: 转账数量
-    ///   - assetId: 资产ID
-    ///   - memo: 备注
-    ///   - completion: 结果回调，返回交易记录或者错误
-    /// - Returns: 返回请求体
-    @discardableResult
-    public class func withdrawToPublicKey(to destination: String,
-                               amount: String,
-                               assetId: String,
-                               memo: String,
-                               completion: @escaping (Result<Snapshot, PaySDKError>) -> Void) -> DataRequest {
-        return NetworkManager.shared
-                .request(api: PaySDKAPI.withdrawToPublicKey(assetId: assetId, amount: amount, destination: destination, memo: memo))
-                .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot, PaySDKError>) in
-                    guard let mappedObject = Snapshot(jsonData: json) else {
-                        return Result.failure(ErrorCode.dataError)
-                    }
-
-                    return Result.success(mappedObject)
-                })
-    }
     
     /// 转账给账户
     /// （必须在PaySDK的接口中传入PIN）
@@ -172,13 +145,13 @@ public final class PaySDKService {
     ///   - completion: 结果回调，返回交易记录或者错误
     /// - Returns: 返回请求体
     @discardableResult
-    public class func withdrawToAccount(to destination: String, tag: String,
+    public class func withdrawToDestination(to destination: String, tag: String,
                                amount: String,
                                assetId: String,
                                memo: String,
                                completion: @escaping (Result<Snapshot, PaySDKError>) -> Void) -> DataRequest {
         return NetworkManager.shared
-            .request(api: PaySDKAPI.withdrawToAccount(assetId: assetId, amount: amount, destination: destination, tag: tag, memo: memo))
+            .request(api: PaySDKAPI.withdrawToDestination(assetId: assetId, amount: amount, destination: destination, tag: tag, memo: memo))
             .hanleEnvelopResponseData(completion: completion, handler: { json -> (Result<Snapshot, PaySDKError>) in
                 guard let mappedObject = Snapshot(jsonData: json) else {
                     return Result.failure(ErrorCode.dataError)
@@ -533,9 +506,19 @@ extension DataRequest {
                 } else {
                     completion(Result.failure(ErrorCode.dataError))
                 }
-
+                
             case .failure(let error):
-                completion(Result.failure(ErrorCode.netWorkError))
+                guard let data = response.data else {
+                    completion(Result.failure(ErrorCode.netWorkError))
+                    return
+                }
+                let json = JSON(data)
+                let statusCode = json["code"].intValue
+                
+                
+                completion(Result.failure(PaySDKError.error(code: statusCode, message: ErrorCode.errorMessage(for: statusCode) ?? json["msg"].stringValue)))
+                
+                
             }
         }
     }
