@@ -21,3 +21,5 @@
 "login_err_frequently"    = "请求太频繁，请稍候再试";
 "invalid_address" = "地址无效";
 "insufficient_balance" = "余额不足";
+
+"phone_not_binded" = "手机号没有绑定";

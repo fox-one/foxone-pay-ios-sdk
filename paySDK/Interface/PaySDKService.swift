@@ -515,7 +515,6 @@ extension DataRequest {
                 let json = JSON(data)
                 let statusCode = json["code"].intValue
                 
-                
                 completion(Result.failure(PaySDKError.error(code: statusCode, message: ErrorCode.errorMessage(for: statusCode) ?? json["msg"].stringValue)))
                 
                 
