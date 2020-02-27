@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (5.0.0-rc.3)
-  - CryptoSwift (1.2.0)
+  - Alamofire (5.0.2)
+  - CryptoSwift (1.3.0)
   - FoxOnePaySDK (3.2.0):
     - Alamofire
     - CryptoSwift
@@ -12,7 +12,7 @@ PODS:
   - SwiftyRSA/ObjC (1.5.0)
 
 DEPENDENCIES:
-  - Alamofire (= 5.0.0-rc.3)
+  - Alamofire
   - CryptoSwift
   - FoxOnePaySDK (from `./`)
   - SwiftyJSON
@@ -30,12 +30,12 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
-  CryptoSwift: 40e374e45291d8dceedcb0d6184da94533eaabdf
+  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
   FoxOnePaySDK: d5edb850b9de5440aefa8f50020282c5f8fbb3e4
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
 
-PODFILE CHECKSUM: d281905f08e92fb22998b0af9b2f9e6c08bd1ba4
+PODFILE CHECKSUM: 7b0ec0adf7d0da524701f1ece83f9a431aece5f2
 
 COCOAPODS: 1.8.4

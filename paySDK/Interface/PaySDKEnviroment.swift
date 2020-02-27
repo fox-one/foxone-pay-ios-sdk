@@ -1,10 +1,3 @@
-//
-//  PaySDKEnviroment.swift
-//  FoxOne
-//
-//  Created by moubuns on 2018/10/24.
-//
-
 import Foundation
 
 public enum SDKEnviroment: Int {

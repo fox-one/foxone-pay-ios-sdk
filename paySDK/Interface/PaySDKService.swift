@@ -72,7 +72,7 @@ public final class PaySDKService {
             switch response.result {
             case .success:
                 completion(Result.success(()))
-            case .failure(let error):
+            case .failure(let _):
                 completion(Result.failure(ErrorCode.dataError))
             }
         })
@@ -507,7 +507,7 @@ extension DataRequest {
                     completion(Result.failure(ErrorCode.dataError))
                 }
                 
-            case .failure(let error):
+            case .failure(let _):
                 guard let data = response.data else {
                     completion(Result.failure(ErrorCode.netWorkError))
                     return
